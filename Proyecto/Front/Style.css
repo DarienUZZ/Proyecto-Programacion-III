@@ -1,0 +1,233 @@
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+/*Parte superior navbar*/
+
+/*Parte del navbar*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*Parte del Header o carusel*/
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 700px;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.carousel-caption .btn {
+  margin-top: 10px;
+}
+
+/*Seccion Bienvenida*/
+.SeccionBienvenida {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #f8f9fa;
+}
+
+.TituloSeccionBienvenida {
+  font-family: sans-serif;
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.SubtituloSeccionBienvenida {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.SeccionBienvenida p {
+  margin-bottom: 1rem;
+}
+
+.bienvenida {
+  max-width: 500px;
+}
+
+.btnSeccionBienvenida {
+  background-color: rgb(0, 63, 92);
+  padding: 7px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.btnSeccionBienvenida:hover {
+  transition: 0.5s;
+  background-color: rgb(0, 108, 158);
+}
+
+@media (max-width: 1200px) {
+  .bienvenida {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bienvenida {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bienvenida {
+    max-width: 500px;
+  }
+  .SeccionBienvenida h2 {
+    font-size: 2.3rem;
+    text-align: center;
+  }
+  .SeccionBienvenida h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .SeccionBienvenida p {
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+  .ContenedorBtn {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .bienvenida {
+    max-width: 250px;
+  }
+  .SeccionBienvenida h2 {
+    font-size: 2rem;
+  }
+  .SeccionBienvenida h3 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .SeccionBienvenida p {
+    margin-bottom: 0.8rem;
+  }
+}
+
+/*Parte Seccion Valores*/
+.SeccionValores {
+  background-color: rgb(0, 63, 92);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.feature {
+  padding: 20px;
+}
+
+/*Parte Seccion Servicios*/
+.SeccionServicios {
+  background-color: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.tituloServicios {
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+}
+.imgServicio {
+  width: 270px;
+  height: 220px;
+}
+.SeccionServicios h3 {
+  color: rgb(0, 63, 92);
+}
+.btnSeccionServicios {
+  background-color: rgb(0, 63, 92);
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.btnSeccionServicios:hover {
+  transition: 0.5s;
+  background-color: rgb(0, 108, 158);
+}
+
+/*Parte de los testimonios*/
+.SeccionTestimonios {
+  background-color: #f3f3f3;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.tituloTestimonios {
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.testimonial {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 5px solid #f8f9fa;
+}
+
+.testimonial p {
+  color: #666;
+  font-style: italic;
+}
+
+.testimonial h5 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.testimonial .text-muted {
+  font-size: 0.9em;
+}
