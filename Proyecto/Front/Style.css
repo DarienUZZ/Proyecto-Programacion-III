@@ -277,3 +277,30 @@ body {
 .testimonial .text-muted {
   font-size: 0.9em;
 }
+
+/*Parte para la pagina dedicada sooo a servicios*/
+.PaginaServiciosTotales {
+  background-color: #f8f9fa;
+}
+
+.service-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card .btn {
+  margin-top: auto;
+}
