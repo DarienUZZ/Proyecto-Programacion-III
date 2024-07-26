@@ -282,8 +282,20 @@ body {
 .PaginaServiciosTotales {
   background-color: #f8f9fa;
 }
+.TitituloPaginaServicios {
+  font-family: "Patua One", serif;
+  color: rgb(0, 63, 92);
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
 
 .service-card {
+  border: none;
+  background: transparent;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -295,12 +307,30 @@ body {
   height: 200px;
   object-fit: cover;
 }
+.TituloCardServicios {
+  margin-top: 20px;
+  font-family: "Patua One", serif;
+  color: rgb(0, 63, 92);
+}
 
 .service-card .card-body {
+  padding: 0px; /* Ajusta el padding según sea necesario */
+  text-align: left;
   display: flex;
   flex-direction: column;
 }
 
 .service-card .btn {
   margin-top: auto;
+  margin-bottom: 30px;
+  font-family: "Patua One", serif;
+  background-color: rgb(0, 63, 92);
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  text-align: start;
+  text-decoration: none; /* Remove underline from link */
+  display: inline-block; /* Ensure it behaves like a button */
 }
