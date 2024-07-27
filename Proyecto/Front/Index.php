@@ -29,7 +29,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item mx-4">
+            <li class="nav-item">
               <a class="nav-link" href="#">Inicio</a>
             </li>
             <li class="nav-item mx-4">
@@ -44,12 +44,12 @@
             <li class="nav-item mx-4">
               <a class="nav-link" href="#">Contacts</a>
             </li>
-            <li class="nav-item mx-4s">
+            <li class="nav-item mx-4">
               <a class="nav-link" href="#">Pages</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item mx-4">
+            <li class="nav-item">
               <a class="nav-link" href="#">Inicio sesión/Registro</a>
             </li>
           </ul>
