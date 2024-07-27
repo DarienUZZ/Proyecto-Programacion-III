@@ -21,6 +21,18 @@ body {
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.navbar {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+}
+
+.navbar .nav-link {
+  color: #333;
+}
+
+.navbar .nav-link:hover {
+  color: rgb(0, 108, 158);
+}
 
 /*Parte del Header o carusel*/
 .carousel-item img {
