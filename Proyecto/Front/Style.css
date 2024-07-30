@@ -400,13 +400,16 @@ body {
 }
 
 /*Formato para informacion de servicios*/
+.seccionPrincipalServicios{
+  margin-top: 100px;
+}
 
 .TituloSeccionPediatria {
   text-align: start;
 }
 
 .TituloSeccionPediatria h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: "Patua One", serif;
   font-weight: bold;
   color: rgb(0, 63, 92);
@@ -541,7 +544,7 @@ body {
 .agendar-cita {
   background-color: rgb(0, 63, 92);
   color: white;
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 
 .agendar-cita h2 {
@@ -558,7 +561,7 @@ body {
 }
 
 .btnAgendar {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-decoration: none;
   font-family: "Patua One", serif;
   background-color: white;
@@ -575,9 +578,137 @@ body {
   color: white;
 }
 
+@media (max-width: 1200px) {
+  .btnAgendar {
+  font-size: 1.2rem;
+
+}
+.agendar-cita h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.agendar-cita p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+}
+
 @media (max-width: 768px) {
   .agendar-cita .col-md-6 {
     text-align: center;
     margin-bottom: 1rem;
   }
+  .btnAgendar {
+  font-size: 1rem;
+
+}
+.agendar-cita h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.agendar-cita p {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+}
+@media (max-width: 576px) {
+.btnAgendar {
+  font-size: 1rem;
+
+}
+.agendar-cita h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.agendar-cita p {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+}
+
+/*Parte del footer*/
+.site-footer {
+  background-color: #333;
+  color: #999;
+  padding: 50px 0 20px;
+  font-size: 14px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.site-footer h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.site-footer h2 {
+  color: #fff;
+
+}
+
+.footer-services {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-services li {
+  margin-bottom: 10px;
+}
+
+.footer-services a {
+  color:  rgb(0, 123, 180);
+  text-decoration: none;
+}
+
+.site-footer i {
+  color:  rgb(0, 123, 180);
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  background-color: #202020;
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.footer-bottom p{
+  color: #fff;
+  font-size: 1rem;
+}
+.social-icons {
+  padding-bottom: 15px; /* Añade padding para separarlos del borde inferior */
+}
+.social-icons a {
+  color: rgb(0, 123, 180);
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.social-icons a:hover {
+  color: #3498db;
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+.social-icons a {
+  margin-left: 10px;
+  font-size: 14px;
+}
+.footer-bottom p{
+  color: #fff;
+  font-size: 0.8rem;
+}
 }

@@ -36,13 +36,10 @@
               <a class="nav-link" href="#">Acerca de Nosotros</a>
             </li>
             <li class="nav-item mx-4">
-              <a class="nav-link" href="PaginaServicios.html">Servicios</a>
+              <a class="nav-link" href="PaginaServicios.php">Servicios</a>
             </li>
             <li class="nav-item mx-4">
               <a class="nav-link" href="#">Contacto</a>
-            </li>
-            <li class="nav-item mx-4">
-              <a class="nav-link" href="#">Contacts</a>
             </li>
             <li class="nav-item mx-4">
               <a class="nav-link" href="#">Pages</a>
@@ -204,7 +201,7 @@
           </div>
         </div>
         <div class="ContenedorBtn text-center">
-          <a href="PaginaServicios.html" class="btnSeccionServicios"
+          <a href="PaginaServicios.php" class="btnSeccionServicios"
             >Todos los servicios</a
           >
         </div>
@@ -269,6 +266,7 @@
       </div>
     </section>
 
+    <?php include 'Footer.php';?>
     <script>
       src = "Scripts.js";
     </script>
