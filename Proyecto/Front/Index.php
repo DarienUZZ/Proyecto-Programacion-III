@@ -58,7 +58,6 @@
     </nav>
     <?php include 'header.php'; ?>
 
-
     <section id="SeccionBienvenida" class="SeccionBienvenida py-4">
       <div class="container">
         <div class="row align-items-center">
