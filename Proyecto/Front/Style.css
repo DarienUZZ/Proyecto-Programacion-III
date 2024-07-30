@@ -12,6 +12,21 @@ body {
 }
 /*Parte superior navbar*/
 
+/* Estilos para el navbar scrolleable */
+.navbar {
+  transition: top 0.3s;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    position: fixed;
+    top: 70px; /* Ajusta esto según la altura de tu topNavbar */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
 /*Parte del navbar*/
 .navbar {
   position: fixed;
@@ -27,43 +42,132 @@ body {
 }
 
 .navbar .nav-link {
-  color: #333;
-}
-
-.navbar .nav-link:hover {
   color: rgb(0, 108, 158);
 }
 
+.navbar .nav-link:hover {
+  color: #333;
+}
+
 /*Parte del Header o carusel*/
-.carousel-item img {
-  width: 100%;
-  height: auto;
+#mainCarousel {
+  height: 500px;
 }
 
-.carousel-inner {
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-item {
-  height: 700px;
-}
-
-.carousel-item img {
+#mainCarousel .carousel-inner {
   height: 100%;
-  object-fit: cover;
+}
+
+#mainCarousel .carousel-item {
+  height: 100%;
+}
+
+#mainCarousel .carousel-item img {
+  height: 100%;
+  object-fit: cover; /* Mantiene la proporción de la imagen y asegura que cubra todo el contenedor */
 }
 
 .carousel-caption {
-  bottom: 20px;
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  text-align: center;
-  color: #fff;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0 10%;
 }
 
-.carousel-caption .btn {
-  margin-top: 10px;
+.caption-content {
+  max-width: 50%;
+}
+
+.carousel-caption h2 {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.btnCaruselSlider1 {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #63ad1a;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.btnCaruselSlider1:hover {
+  transition: 0.5s;
+  background-color: rgb(85, 217, 29);
+}
+.carousel-indicators [data-bs-target] {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+@media (max-width: 992px) {
+  .carousel-caption {
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .caption-content {
+    max-width: 80%;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .carousel-item {
+    height: 450px;
+  }
+
+  .caption-content {
+    max-width: 100%;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .carousel-caption .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 /*Seccion Bienvenida*/
@@ -213,8 +317,9 @@ body {
   font-weight: bolder;
 }
 .imgServicio {
-  width: 270px;
+  width: 100%;
   height: 220px;
+  object-fit: cover;
 }
 .subtituloSeccionServicios {
   font-family: "M PLUS Rounded 1c", sans-serif;
@@ -297,7 +402,7 @@ body {
   color: rgb(0, 63, 92);
   font-size: 2.5rem;
   font-weight: bolder;
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: 50px;
   padding-left: 80px;
   padding-right: 80px;
@@ -400,7 +505,7 @@ body {
 }
 
 /*Formato para informacion de servicios*/
-.seccionPrincipalServicios{
+.seccionPrincipalServicios {
   margin-top: 100px;
 }
 
@@ -483,9 +588,6 @@ body {
   height: 20px;
 }
 
-
-
-
 @media (max-width: 1200px) {
   .ContenidoPediatria {
     max-width: 700px;
@@ -521,7 +623,6 @@ body {
   .ContenidoPediatria li {
     list-style-type: none;
   }
-
 }
 
 @media (max-width: 576px) {
@@ -537,7 +638,6 @@ body {
   .ContenidoPediatria h2 {
     font-size: 1.5rem;
   }
-
 }
 
 /*Seccion anuncio agendar cita*/
@@ -580,18 +680,17 @@ body {
 
 @media (max-width: 1200px) {
   .btnAgendar {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
+  }
+  .agendar-cita h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
 
-}
-.agendar-cita h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.agendar-cita p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
+  .agendar-cita p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -600,33 +699,31 @@ body {
     margin-bottom: 1rem;
   }
   .btnAgendar {
-  font-size: 1rem;
+    font-size: 1rem;
+  }
+  .agendar-cita h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
 
-}
-.agendar-cita h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.agendar-cita p {
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-}
+  .agendar-cita p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
 }
 @media (max-width: 576px) {
-.btnAgendar {
-  font-size: 1rem;
+  .btnAgendar {
+    font-size: 1rem;
+  }
+  .agendar-cita h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
 
-}
-.agendar-cita h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.agendar-cita p {
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-}
+  .agendar-cita p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
 }
 
 /*Parte del footer*/
@@ -640,16 +737,21 @@ body {
 .footer-logo {
   font-size: 24px;
   margin-bottom: 20px;
+  font-family: "Patua One", serif;
 }
 
 .site-footer h3 {
+  font-family: "Patua One", serif;
   color: #fff;
   font-size: 18px;
   margin-bottom: 20px;
 }
+.ParrafoDescFooter {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+}
 .site-footer h2 {
   color: #fff;
-
 }
 
 .footer-services {
@@ -659,15 +761,17 @@ body {
 
 .footer-services li {
   margin-bottom: 10px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
 }
 
 .footer-services a {
-  color:  rgb(0, 123, 180);
+  color: rgb(0, 123, 180);
   text-decoration: none;
 }
 
 .site-footer i {
-  color:  rgb(0, 123, 180);
+  color: rgb(0, 123, 180);
   margin-right: 10px;
 }
 
@@ -681,9 +785,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
-.footer-bottom p{
+.footer-bottom p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
   color: #fff;
   font-size: 1rem;
 }
@@ -700,15 +805,61 @@ body {
   color: #3498db;
 }
 @media (max-width: 768px) {
-
 }
 @media (max-width: 576px) {
-.social-icons a {
-  margin-left: 10px;
-  font-size: 14px;
+  .social-icons a {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  .footer-bottom p {
+    color: #fff;
+    font-size: 0.8rem;
+  }
 }
-.footer-bottom p{
+
+/*Parte de contacto*/
+.tituloContacto {
+  font-family: "Patua One", serif;
+  font-weight: bold;
+  color: rgb(0, 63, 92);
+  font-size: 2.5rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.InputsContacto {
+  background-color: #f1f1f1;
+  border-radius: 0;
+  border: 0;
+}
+
+.InputsContacto::placeholder {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+}
+.InputsContacto:focus {
+  background-color: #f1f1f1;
+  outline: none;
+  border-radius: 0;
+  border: 0;
+}
+
+.EtiquetaContacto {
+  font-family: "Patua One", serif;
+  font-weight: 300px;
+  color: rgb(0, 63, 92);
+}
+.btnContacto {
+  font-family: "Patua One", serif;
+  background-color: rgb(0, 63, 92);
+  padding: 7px 20px;
   color: #fff;
-  font-size: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
 }
+
+.btnContacto:hover {
+  transition: 0.5s;
+  background-color: rgb(0, 108, 158);
 }

@@ -15,34 +15,25 @@
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
 
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="img/slider-01.jpg" class="d-block w-100" alt="Dental Clinic 1" />
+        <img src="img/imgCarusel3.png" class="d-block w-100" alt="Dental Clinic 1" />
         <div class="carousel-caption">
-          <h2>Appointments</h2>
-          <p>
-            Booking an appointment at our dental clinic is as easy as it
-            gets...
-          </p>
-          <p>
-            You will be able to schedule a convenient time for your meeting
-            with our dentists with just 2 clicks!
-          </p>
-          <button class="btn btn-primary">Book an Appointment</button>
+          <div class="caption-content">
+            <h2>Dr. JAVIER SEGURA R</h2>
+            <p>Médico Cirujano, Especialista en Pediatría y Especialista en Medicina Extracorpórea Pediátrica,</p>
+            <button class="btnCaruselSlider1">Agenda Tu Cita</button>
+          </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="img/slider-03.jpg" class="d-block w-100" alt="Dental Clinic 2" />
-        <div class="carousel-caption">
-          <h2>Our Services</h2>
-          <p>
-            We offer a wide range of dental services to keep your smile
-            healthy and bright.
-          </p>
-          <button class="btn btn-primary">Learn More</button>
-        </div>
+        <img src="img/imgCarusel2.webp" class="d-block w-100" alt="Dental Clinic 2" />
+      </div>
+      <div class="carousel-item">
+        <img src="img/imgCarusel1.webp" class="d-block w-100" alt="Dental Clinic 2" />
       </div>
     </div>
   </div>

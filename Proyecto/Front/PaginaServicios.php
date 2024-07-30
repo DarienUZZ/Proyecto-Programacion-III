@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Inicio</a>
+            <a class="nav-link" href="Index.php">Inicio</a>
           </li>
           <li class="nav-item mx-4">
             <a class="nav-link" href="#">Acerca de Nosotros</a>
@@ -43,10 +43,12 @@
     </div>
   </nav>
 
+  <?php include 'Header.php'?>
+
   <section class="PaginaServiciosTotales">
     <div class="container">
       <h2 class="text-center TitituloPaginaServicios">
-        Explore Nuestros Servicios Especializados en Atención Médica Integral
+        Nuestros Servicios Especializados en Atención Médica Integral
       </h2>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="services">
