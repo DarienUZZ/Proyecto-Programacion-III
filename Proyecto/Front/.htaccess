@@ -1,0 +1,9 @@
+# Habilitar mod_rewrite
+RewriteEngine On
+
+# Eliminar la extensión .php de la URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [L]
+
+# Redirigir errores 404 a una página personalizada
+ErrorDocument 404 /404.php

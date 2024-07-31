@@ -23,7 +23,7 @@
               <a class="nav-link" href="#">Inicio</a>
             </li>
             <li class="nav-item mx-4">
-              <a class="nav-link" href="#">Acerca de Nosotros</a>
+              <a class="nav-link" href="Contacto.php">Acerca de Nosotros</a>
             </li>
             <li class="nav-item mx-4">
               <a class="nav-link" href="PaginaServicios.php">Servicios</a>
@@ -32,7 +32,7 @@
               <a class="nav-link" href="Contacto.php">Contacto</a>
             </li>
             <li class="nav-item mx-4">
-              <a class="nav-link" href="#">Pages</a>
+              <a class="nav-link" href="Error404.php">Pages</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
