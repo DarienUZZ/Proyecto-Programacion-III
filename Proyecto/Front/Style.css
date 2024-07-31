@@ -467,7 +467,7 @@ body {
     }
   }
 
-  /*Sección Imagen Principal Acerca de:*/
+/*Sección Imagen Principal Acerca de:*/
 
 .SeccionAcercaImgPrincipal {
   margin-top: 50px;
@@ -556,5 +556,46 @@ body {
     padding-top: 30px;
   }
 }
+
+
+/*Seccion Historia*/
+
+.SeccionHistoria {
+  background-color: aliceblue;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.TituloSeccionHistoria {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+  font-size: 2rem;
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+
+.SubtituloSeccionHistoria {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.SeccionHistoria p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  font-size: 1rem;
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+}
+
+
+
 
 
