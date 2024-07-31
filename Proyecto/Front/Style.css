@@ -596,6 +596,51 @@ body {
 }
 
 
+/*Seccion Equipo*/
+
+.SeccionEquipo {
+  background-color: aliceblue;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.tituloEquipo {
+  font-family: "Patua One", serif;
+  color: rgb(0, 63, 92);
+  font-size: 3rem;
+  font-weight: bolder;
+  
+  padding-bottom: 20px;
+}
+
+.imgEquipo {
+  width: 220px;
+  height: 220px;
+}
+
+.NombreSeccionEquipo {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  color: rgb(0, 63, 92);
+  font-size: 1.3rem;
+}
+
+.ProfesionSeccionEquipo {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  color: rgb(85, 88, 90);
+  font-size: 1.1rem;
+}
+
+.SeccionEquipo p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  color: black;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
 
 
