@@ -204,11 +204,12 @@ body {
 .btnSeccionBienvenida {
   font-family: "Patua One", serif;
   background-color: rgb(0, 63, 92);
-  padding: 7px 20px;
+  padding: 10px 20px;
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .btnSeccionBienvenida:hover {
@@ -502,6 +503,13 @@ body {
     color: rgb(0, 63, 92);
     font-size: 1.7rem;
   }
+  .tituloSeccionValores {
+  font-weight: bolder;
+  font-family: "Patua One", serif;
+  font-size: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 }
 
 /*Formato para informacion de servicios*/
@@ -920,4 +928,326 @@ body {
   top: 70%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/*Parte del Registro*/
+.Registro {
+  background-color: rgb(0, 108, 158);
+}
+
+.cardResgistro {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffff;
+}
+.InputRegistroUsuario {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  border: 0;
+  margin-bottom: 20px;
+}
+
+.InputRegistroUsuario::placeholder {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+}
+.InputRegistroUsuario:focus {
+  background-color: #f1f1f1;
+  outline: none;
+  border-radius: 0;
+  border: 0;
+}
+.cardBodyResgistro {
+  padding: 40px;
+}
+
+.btnRegistroUsuario {
+  font-family: "Patua One", serif;
+  background-color: rgb(0, 63, 92);
+  padding: 7px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.btnRegistroUsuario:hover {
+  transition: 0.5s;
+  background-color: rgb(0, 108, 158);
+}
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo img {
+  height: auto;
+}
+
+/*Sección Imagen Principal Acerca de:*/
+
+/*Seccion Historia*/
+
+.SeccionHistoria {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.TituloSeccionHistoria {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+  font-size: 2rem;
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+
+.SubtituloSeccionHistoria {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.SeccionHistoria p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  font-size: 1rem;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+/*Seccion Misión*/
+
+.SeccionMision {
+  margin-top: 50px;
+}
+
+.TituloSeccionMision {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  background-color: rgb(0, 63, 92);
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-shadow: 2px 5px #7fb2c2;
+  text-transform: uppercase;
+}
+
+.SubtituloSeccionMision {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+  font-size: 3rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.SeccionMision p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  font-size: 1.3rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+.Mision {
+  width: 100%;
+  height: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/*Seccion Visión*/
+
+.TituloSeccionVision {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  background-color: rgb(0, 63, 92);
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 20px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-shadow: 2px 5px #7fb2c2;
+  text-transform: uppercase;
+}
+
+.SubtituloSeccionVision {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+  font-size: 2.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.SeccionVision p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  font-size: 1.3rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+.Vision {
+  width: 100%;
+  height: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (max-width: 1200px) {
+  .TituloSeccionHistoria {
+    font-size: 1.9rem;
+  }
+
+  .SubtituloSeccionHistoria {
+    font-size: 1.3rem;
+  }
+
+  .SeccionHistoria p {
+    font-size: 1rem;
+  }
+  .SubtituloSeccionMision {
+    margin-top: 50px;
+    font-size: 3rem;
+  }
+
+  .SeccionMision p {
+    font-size: 1.3rem;
+    padding-bottom: 30px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .TituloSeccionHistoria {
+    font-size: 1.9rem;
+    text-align: center;
+        padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SubtituloSeccionHistoria {
+    font-size: 1.3rem;
+    text-align: center;
+        padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SeccionHistoria p {
+    font-size: 1rem;
+    text-align: center;
+        padding-left: 10px;
+    padding-right: 10px;
+  }
+    .SubtituloSeccionMision {
+    text-align: center;
+
+    font-size: 2.3rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SeccionMision p {
+    text-align: center;
+
+    font-size: 1.1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /*Seccion Visión*/
+
+  .SubtituloSeccionVision {
+    text-align: center;
+
+    font-size: 2.3rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SeccionVision p {
+    text-align: center;
+
+    font-size: 1.1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .TituloSeccionHistoria {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SubtituloSeccionHistoria {
+    font-size: 1rem;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SeccionHistoria p {
+    font-size: 0.9rem;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SubtituloSeccionMision {
+    text-align: center;
+
+    font-size: 1.6rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SeccionMision p {
+    text-align: center;
+
+    font-size: 0.9rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /*Seccion Visión*/
+
+  .SubtituloSeccionVision {
+    text-align: center;
+
+    font-size: 1.6rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .SeccionVision p {
+    text-align: center;
+
+    font-size: 0.9rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

@@ -11,41 +11,7 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Inicio</a>
-            </li>
-            <li class="nav-item mx-4">
-              <a class="nav-link" href="Contacto.php">Acerca de Nosotros</a>
-            </li>
-            <li class="nav-item mx-4">
-              <a class="nav-link" href="PaginaServicios.php">Servicios</a>
-            </li>
-            <li class="nav-item mx-4">
-              <a class="nav-link" href="Contacto.php">Contacto</a>
-            </li>
-            <li class="nav-item mx-4">
-              <a class="nav-link" href="Error404.php">Pages</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Inicio sesión/Registro</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <?php include 'header.php'; ?>
+  <?php include 'modulos/header.php'; ?>
 
   <section id="SeccionBienvenida" class="SeccionBienvenida py-4">
     <div class="container">
@@ -67,7 +33,7 @@
             actitudes proactivas en nuestras vidas.
           </p>
           <div class="ContenedorBtn">
-            <button class="btnSeccionBienvenida">Leer más</button>
+            <a href="Acerca-Nosotros.php" class="btnSeccionBienvenida">Leer más</a>
           </div>
         </div>
       </div>
@@ -179,40 +145,36 @@
           <div class="testimonial text-center">
             <img src="img/imgTestimonios/ImgTestimonios01.jpg" alt="Patient 1" class="rounded-circle mb-3" width="100" />
             <p class="mb-3">
-              "I urgently required dental help last 4th of July. And despite
-              all other clinics being closed, BeDentist took my appointment!"
+              "Visité la clínica para una cirugía menor y quedé impresionado con la calidad del servicio. Desde la recepción hasta el postoperatorio, todos fueron muy atentos."
             </p>
             <h5>Herbert Wallace</h5>
-            <small class="text-muted">May 10, 2018</small>
+            <small class="text-muted">04 Junio, 2024</small>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="testimonial text-center">
             <img src="img/imgTestimonios/ImgTestimonios02.jpg" alt="Patient 2" class="rounded-circle mb-3" width="100" />
             <p class="mb-3">
-              "Comparing teeth whitening prices here and elsewhere, I picked
-              BeDentist. The result was beyond my expectations!"
+              "Después de una lesión en mi rodilla, acudí a la clínica para recibir tratamiento. El equipo de ortopedia me ayudó a recuperarme rápidamente con su dedicación y profesionalismo."
             </p>
             <h5>Gary Growles</h5>
-            <small class="text-muted">May 10, 2018</small>
+            <small class="text-muted">15 Agosto, 2017</small>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="testimonial text-center">
             <img src="img/imgTestimonios/ImgTestimonios03.webp" alt="Patient 3" class="rounded-circle mb-3" width="100" />
             <p class="mb-3">
-              "Taking my kids to a dentist has never been easier. They just
-              loved the welcoming and warm atmosphere in there!"
-            </p>
+              "La atención en la clínica es excepcional. Llevé a mi hijo para un chequeo y el personal fue muy amable y profesional. Estoy muy tranquila sabiendo que mi hijo está en buenas manos." </p>
             <h5>Daniela Robbery</h5>
-            <small class="text-muted">May 10, 2018</small>
+            <small class="text-muted">10 Mayo, 2021</small>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <?php include 'Footer.php'; ?>
+  <?php include 'modulos/Footer.php'; ?>
   <script>
     src = "Scripts.js";
   </script>
