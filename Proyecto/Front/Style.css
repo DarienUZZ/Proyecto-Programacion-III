@@ -643,4 +643,57 @@ body {
 }
 
 
+/*Seccion Misión*/
+
+.SeccionMision {
+  background-color: aliceblue;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.TituloSeccionMision {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  background-color: rgb(0, 63, 92);
+  color: #fff;
+  font-size: 2rem;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-shadow: 2px 5px #7fb2c2;
+  text-transform: uppercase;
+  
+}
+
+.SubtituloSeccionMision {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: bolder;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.SeccionMision p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  font-size: 1.3rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+.Mision {
+  width: 540px;
+  height: 540px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 
