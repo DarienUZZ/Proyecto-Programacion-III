@@ -1144,26 +1144,25 @@ body {
   .TituloSeccionHistoria {
     font-size: 1.9rem;
     text-align: center;
-        padding-left: 10px;
+    padding-left: 10px;
     padding-right: 10px;
   }
 
   .SubtituloSeccionHistoria {
     font-size: 1.3rem;
     text-align: center;
-        padding-left: 10px;
+    padding-left: 10px;
     padding-right: 10px;
   }
 
   .SeccionHistoria p {
     font-size: 1rem;
     text-align: center;
-        padding-left: 10px;
+    padding-left: 10px;
     padding-right: 10px;
   }
     .SubtituloSeccionMision {
     text-align: center;
-
     font-size: 2.3rem;
     padding-left: 10px;
     padding-right: 10px;
