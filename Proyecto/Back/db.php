@@ -1,10 +1,10 @@
 <?php
 
 //credenciales de la base de datos
-$servername = "localhost";
-$username = "root"; 
-$password = ""; 
-$dbname = "clinica"; 
+$servername = "localhost:3305";
+$username = "root";
+$password = "";
+$dbname = "Clinicaa";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

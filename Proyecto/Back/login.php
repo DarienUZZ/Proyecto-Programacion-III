@@ -5,7 +5,7 @@ $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
 
 // Preparar y ejecutar la consulta
-$sql = "SELECT id, contraseña, rol FROM usuarios WHERE usuario = ?";
+$sql = "SELECT cedula, contraseña, rol FROM usuarios WHERE usuario = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $usuario);
 $stmt->execute();
@@ -16,19 +16,22 @@ if ($result->num_rows === 1) {
     // Verificar la contraseña
     if (password_verify($contraseña, $row['contraseña'])) {
         // Contraseña correcta
-        $_SESSION['usuario_id'] = $row['id'];
+        $_SESSION['usuario_cedula'] = $row['cedula'];
         $_SESSION['rol'] = $row['rol'];
-        header("Location: ../Front/private.php"); // Redirige a la sección privada
+        header("Location: ../Front/VistaCliente.php"); // Redirige a la sección privada
         exit();
     } else {
         // Contraseña incorrecta
-        echo "Nombre de usuario o contraseña incorrectos.";
+        header("Location: ../Front/login.php?error=1");
+        exit();
     }
 } else {
     // Usuario no encontrado
-    echo "Nombre de usuario o contraseña incorrectos.";
+    header("Location: ../Front/login.php?error=1");
+    exit();
 }
 
 // Cerrar la conexión
 $stmt->close();
 $conn->close();
+?>
