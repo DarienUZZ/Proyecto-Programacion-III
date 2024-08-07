@@ -22,7 +22,7 @@ $stmt->bind_param("siss", $cedula, $id_servicio, $fechaHora, $estado);
 
 // Ejecutar la consulta
 if ($stmt->execute()) {
-    header("Location: ../Front/VistaCliente.php");
+    header("Location: ../Front/vista-usuario/historial-citas.php");
     exit();
 } else {
     echo "Error: " . $stmt->error;

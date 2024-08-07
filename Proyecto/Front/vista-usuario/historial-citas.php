@@ -1,6 +1,7 @@
 <?php
 session_start();
-include '../Back/db.php';
+include 'C:/xampp/htdocs/Proyecto-Programacion-III/Proyecto/Back/db.php'; // Ruta absoluta como prueba
+
 
 $cedula = $_SESSION['usuario_cedula'];
 
@@ -62,7 +63,7 @@ $conn->close();
 </head>
 
 <body>
-    <?php include 'modulos/HeaderUsuario.php' ?>
+    <?php include '../modulos/HeaderUsuario.php' ?>
     <div class="container my-5">
         <table id="example" class="table table-striped" style="width: 100%">
             <thead>

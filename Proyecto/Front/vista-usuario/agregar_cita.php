@@ -15,13 +15,13 @@
 
     <div class="container mt-5">
         <h2>Agregar Cita</h2>
-        <form action="../Back/agregar_cita.php" method="POST">
+        <form action="/Proyecto-Programacion-III/Proyecto/Back/agregar_cita.php" method="POST">
             <div class="form-group mb-3">
                 <label for="servicio">Servicio:</label>
                 <select name="servicio" id="servicio" class="form-select" required>
                     <?php
                     // Conectar a la base de datos
-                    include '../Back/db.php';
+                    include 'C:/xampp/htdocs/Proyecto-Programacion-III/Proyecto/Back/db.php';
 
                     // Obtener los servicios de la base de datos
                     $sql = "SELECT id, nombre FROM servicios";

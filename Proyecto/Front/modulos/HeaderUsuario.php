@@ -22,16 +22,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../VistaCliente.php">Inicio</a>
+                            <a class="nav-link" href="../vista-usuario/VistaCliente.php">Inicio</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="../historial-citas.php">Historial Citas</a>
+                            <a class="nav-link" href="../vista-usuario/historial-citas.php">Historial Citas</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="../agregar_cita.php">Agendar Cita</a>
+                            <a class="nav-link" href="../vista-usuario/agregar_cita.php">Agendar Cita</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="../VistaClienteServicio.php">Servicios</a>
+                            <a class="nav-link" href="../vista-usuario/VistaClienteServicio.php">Servicios</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -41,7 +41,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Back/cerrar-sesion.php">Cerrar Sesion</a>
+                            <a class="nav-link" href="/Proyecto-Programacion-III/Proyecto/Back/cerrar-sesion.php">Cerrar
+                                Sesion</a>
                         </li>
                     </ul>
                 </div>
@@ -71,10 +72,10 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img/imgCarusel2.webp" class="d-block w-100" alt="Dental Clinic 2" />
+                <img src="../img/imgCarusel2.webp" class="d-block w-100" alt="Dental Clinic 2" />
             </div>
             <div class="carousel-item">
-                <img src="img/imgCarusel1.webp" class="d-block w-100" alt="Dental Clinic 2" />
+                <img src="../img/imgCarusel1.webp" class="d-block w-100" alt="Dental Clinic 2" />
             </div>
         </div>
     </div>

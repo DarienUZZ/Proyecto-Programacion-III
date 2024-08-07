@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../Back/db.php';
+include 'C:/xampp/htdocs/Proyecto-Programacion-III/Proyecto/Back/db.php';
 
 $cedula = $_SESSION['usuario_cedula']; // Si no se usa en esta consulta, puedes omitirla.
 
