@@ -16,6 +16,7 @@ if (!$stmt) {
 $stmt->execute();
 $result = $stmt->get_result();
 
+//Coleccion Para guardar los datos obtnidos dell la consulta
 $servicios = [];
 while ($row = $result->fetch_assoc()) {
     $servicios[] = $row;

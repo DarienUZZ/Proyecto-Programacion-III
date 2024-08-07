@@ -20,22 +20,20 @@ body {
 @media (min-width: 992px) {
   .navbar {
     position: fixed;
-    top: 70px; /* Ajusta esto según la altura de tu topNavbar */
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
-/*Parte del navbar*/
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+@media (max-width: 991px) {
+  .navbar {
+    position: static;
+  }
 }
+
 .navbar {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: lighter;
@@ -1311,133 +1309,139 @@ body {
 }
 
 /*Parte la vista del usuario*/
-.sidebar {
-  background-color: #00305f;
-  height: 100vh;
-  padding-top: 1rem;
-  transition: transform 0.3s ease-in-out;
+.tituloVistaCliente {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+  font-size: 2.5rem;
 }
-
-.sidebar .nav-link {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 0.5rem;
-  border-radius: 0.25rem;
+.tituloCardVistaCliente {
+  font-family: "Patua One", serif;
+  font-weight: 500;
+  color: rgb(0, 63, 92);
+  font-size: 1.8rem;
 }
-
-.sidebar .nav-link:hover {
-  background-color: #e9ecef;
+.textoCardVistaCliente {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  font-size: 1rem;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
-.sidebar .iconoBarraLateral {
-  margin-right: 0.5rem;
-}
-
-.sidebar.collapsed {
-  transform: translateX(-250px);
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    transform: translateX(-100%);
-    z-index: 1000;
-  }
-
-  .sidebar.show {
-    transform: translateX(0);
-  }
-
-  .btn-sidebar-toggle {
-    display: block;
-  }
-}
-
-.btn-sidebar-toggle {
-  display: none;
-}
-.iconoBarraLateral {
+.btnVistaCliente1 {
+  font-family: "Patua One", serif;
+  background-color: rgb(0, 63, 92);
+  padding: 9px 20px;
   color: #fff;
+  border: none;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
 }
-/* Estilos para la barra lateral */
-.sidebar {
-  height: 100vh;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #343a40;
+
+.btnVistaCliente1:hover {
+  transition: 0.5s;
+  background-color: rgb(0, 108, 158);
+}
+/*segundo btn*/
+.btnVistaCliente2 {
+  font-family: "Patua One", serif;
+  background-color: #63ad1a;
+  padding: 9px 20px;
   color: #fff;
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  transform: translateX(0);
+  border: none;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.sidebar.hide {
-  transform: translateX(-100%);
+.btnVistaCliente2:hover {
+  transition: 0.5s;
+  background-color: rgb(85, 217, 29);
 }
-
-.sidebar .nav-link {
-  color: #adb5bd;
-}
-
-.sidebar .nav-link.active {
+/*tercer btn*/
+.btnVistaCliente3 {
+  font-family: "Patua One", serif;
+  background-color: rgb(78, 199, 255);
+  padding: 9px 20px;
   color: #fff;
-  background-color: #495057;
+  border: none;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.sidebar .nav-link:hover {
+.btnVistaCliente3:hover {
+  transition: 0.5s;
+  background-color: rgb(0, 108, 158);
+}
+.iconoVistaCliente1 {
+  color: rgb(0, 108, 158);
+}
+.iconoVistaCliente2 {
+  color: #63ad1a;
+}
+.iconoVistaCliente3 {
+  color: rgb(78, 199, 255);
+}
+.cardCardVistaCliente {
+  background-color: #fdfdfd;
+  border: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+/*Exportar Citas*/
+.cardExportar {
+  height: 200px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.cardExportar-title {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.cardExportar-text {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: lighter;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.btnCrExportar {
+  background-color: #63ad1a;
+  padding: 9px 20px;
   color: #fff;
-  background-color: #495057;
+  border: none;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
 }
 
-.sidebar .close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
+.btnCrExportar:hover {
+  transition: 0.5s;
+  background-color: rgb(85, 217, 29);
 }
 
-/* Estilos para el botón de alternancia */
-.btn-toggle {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1001;
-  transition: opacity 0.3s ease;
+.TituloHistorialCitas {
+  font-family: "Patua One", serif;
+  font-weight: bolder;
+  color: rgb(0, 63, 92);
+  font-size: 2.5rem;
 }
-
-.btn-toggle.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Estilos para el contenido principal */
-.main-content {
-  margin-left: 0;
-  transition: margin-left 0.3s ease;
-}
-
-.main-content.shifted {
-  margin-left: 250px;
-  /* Igual al ancho de la barra lateral */
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    transform: translateX(-100%);
-  }
-
-  .sidebar.show {
-    transform: translateX(0);
-  }
-
-  .btn-toggle.hide {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .main-content.shifted {
-    margin-left: 0;
-  }
+.SubtituloHistorialCitas {
+  font-family: "Patua One", serif;
+  font-weight: 500;
+  color: rgb(0, 63, 92);
+  font-size: 1.5rem;
 }

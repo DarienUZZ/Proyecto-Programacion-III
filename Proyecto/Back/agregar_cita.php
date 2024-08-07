@@ -2,16 +2,25 @@
 session_start();
 include 'db.php';
 
+// Obtener datos del formulario
 $cedula = $_SESSION['usuario_cedula']; // Ajusta este nombre de variable según cómo guardes la cédula en la sesión
 $id_servicio = $_POST['servicio'];
-$fecha = $_POST['fecha'];
+$fechaHora = $_POST['fechaHora'];
 $estado = 'pendiente';
 
-// Preparar y ejecutar la consulta para insertar la cita
+// Preparar la consulta SQL
 $sql = "INSERT INTO citas (cedula, id_servicio, fecha, estado) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("siss", $cedula, $id_servicio, $fecha, $estado);
 
+// Verificar si la preparación de la consulta fue exitosa
+if ($stmt === false) {
+    die('Error en la preparación de la consulta: ' . $conn->error);
+}
+
+// Enlazar los parámetros
+$stmt->bind_param("siss", $cedula, $id_servicio, $fechaHora, $estado);
+
+// Ejecutar la consulta
 if ($stmt->execute()) {
     header("Location: ../Front/VistaCliente.php");
     exit();
@@ -19,6 +28,7 @@ if ($stmt->execute()) {
     echo "Error: " . $stmt->error;
 }
 
+// Cerrar la consulta y la conexión
 $stmt->close();
 $conn->close();
 ?>

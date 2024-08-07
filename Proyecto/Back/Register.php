@@ -9,8 +9,8 @@ $apellido2 = $_POST['apellido2'];
 $email = $_POST['email'];
 $telefono = $_POST['telefono'];
 $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT); // Encriptar la contraseña
-$cedula = $_POST['cedula']; // Obtener la cédula del formulario
-$rol = "cliente"; // Asignar el rol de "cliente"
+$cedula = $_POST['cedula'];
+$rol = "cliente";
 
 // Verificar si la cédula ya existe en la base de datos
 $sql = "SELECT COUNT(*) AS count FROM usuarios WHERE cedula = ?";
@@ -20,8 +20,8 @@ $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 
+//Aqui verifico si la cantidad de registros es mayor a 0 o se que la cedula si exite
 if ($row['count'] > 0) {
-    // La cédula ya existe
     header("Content-Type: application/json");
     echo json_encode([
         'status' => 'error',
@@ -44,7 +44,6 @@ if ($stmt->execute()) {
         'message' => 'Nuevo usuario creado con éxito.'
     ]);
 } else {
-    // Error al crear el usuario
     header("Content-Type: application/json");
     echo json_encode([
         'status' => 'error',

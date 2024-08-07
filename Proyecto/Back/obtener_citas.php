@@ -2,7 +2,7 @@
 session_start();
 include 'db.php';
 
-$cedula = $_SESSION['usuario_cedula']; // Ajusta este nombre de variable según cómo guardes la cédula en la sesión
+$cedula = $_SESSION['usuario_cedula'];
 
 // Consulta para obtener las citas del usuario
 $sql = "SELECT citas.fecha, 
@@ -12,9 +12,9 @@ $sql = "SELECT citas.fecha,
                citas.estado 
         FROM citas 
         JOIN servicios ON citas.id_servicio = servicios.id 
-        WHERE citas.cedula = ?"; // Cambiar 'id_usuario' a 'cedula'
+        WHERE citas.cedula = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $cedula); // Cambiar 'i' a 's' para cédula (VARCHAR)
+$stmt->bind_param("s", $cedula);
 $stmt->execute();
 $result = $stmt->get_result();
 
