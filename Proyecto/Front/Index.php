@@ -23,7 +23,7 @@
         <div class="col-lg-6 col-md-12">
           <h2 class="TituloSeccionBienvenida">Clinica VivirBien</h2>
           <h3 class="SubtituloSeccionBienvenida">
-            Dental clinic BeDentist welcomes you!
+            Clinica VivirBien te da la bienvenida.
           </h3>
 
           <p>

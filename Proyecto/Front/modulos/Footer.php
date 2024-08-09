@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servicios</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="Style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
@@ -15,7 +16,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <h2 class="footer-logo">Clinica perteneser</h2>
+          <h2 class="footer-logo">Clinica VivirBien</h2>
           <p class="ParrafoDescFooter">
             Profesionales en salud en Heredia capacitados para brindarle la
             ayuda que usted necesita y a la vez apoyarlo en todo el proceso
@@ -27,11 +28,11 @@
         <div class="col-md-3">
           <h3>Nuestros Servicios</h3>
           <ul class="footer-services">
-            <li><a href="#">Pediatría</a></li>
-            <li><a href="#">Psiquiatría</a></li>
-            <li><a href="#">Ortopedia</a></li>
-            <li><a href="#">Urologia</a></li>
-            <li><a href="PaginaServicios.html">Más servicios</a></li>
+            <li><a href="PaginaServicios.php">Pediatría</a></li>
+            <li><a href="PaginaServicios.php">Psiquiatría</a></li>
+            <li><a href="PaginaServicios.php">Ortopedia</a></li>
+            <li><a href="PaginaServicios.php">Urologia</a></li>
+            <li><a href="PaginaServicios.php">Más servicios</a></li>
           </ul>
         </div>
         <div class="col-md-3">
@@ -58,17 +59,23 @@
     <div class="container">
       <p>&copy; Todos los derechos reservados 2024</p>
       <div class="social-icons">
-        <a href="https://www.facebook.com/pertenesercr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.youtube.com/channel/UCEBeRxICbdzdxMq-9V0YY6w" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/clinicaperteneser?igsh=MTk5YTAyYzYzcGo5aQ==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        <a href="https://api.whatsapp.com/send?phone=50683663773" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/pertenesercr/" target="_blank" rel="noopener noreferrer"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/channel/UCEBeRxICbdzdxMq-9V0YY6w" target="_blank" rel="noopener noreferrer"><i
+            class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/clinicaperteneser?igsh=MTk5YTAyYzYzcGo5aQ==" target="_blank"
+          rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=50683663773" target="_blank" rel="noopener noreferrer"><i
+            class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </div>
   <script>
     src = "Scripts.js";
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

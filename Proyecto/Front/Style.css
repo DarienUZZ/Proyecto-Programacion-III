@@ -1445,3 +1445,15 @@ body {
   color: rgb(0, 63, 92);
   font-size: 1.5rem;
 }
+
+.tituloNombreUsuario {
+  font-family: "Patua One", serif;
+  font-weight: 500;
+  color: rgb(0, 63, 92);
+}
+
+.tituloContra {
+  font-family: "Patua One", serif;
+  font-weight: 500;
+  color: rgb(0, 63, 92);
+}

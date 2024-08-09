@@ -13,6 +13,7 @@
 </head>
 
 <body class="Registro d-flex justify-content-center align-items-center vh-100">
+
     <div class="cardResgistro">
         <div class="cardBodyResgistro">
             <div class="logo-container">

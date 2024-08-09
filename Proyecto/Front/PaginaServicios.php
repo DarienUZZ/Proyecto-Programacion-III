@@ -5,14 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servicios</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="Style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
 
-  <?php include 'modulos/Header.php'?>
+  <?php include 'modulos/Header.php' ?>
 
   <section class="PaginaServiciosTotales">
     <div class="container">
@@ -30,7 +31,7 @@
                 Cuidamos la salud de los más pequeños con atención integral y
                 preventiva para asegurar su desarrollo óptimo.
               </p>
-              <a href="Pediatria.html" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Pediatria.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -44,7 +45,7 @@
                 Ofrecemos tratamientos especializados para la salud mental,
                 adaptados a las necesidades individuales de cada paciente.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="../Psiquiatria.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -87,7 +88,8 @@
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="services">
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioGinecología.jpg" class="card-img-top" alt="General and preventive care" />
+            <img src="img/imgServicios/imgServicioGinecología.jpg" class="card-img-top"
+              alt="General and preventive care" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Ginecología</h5>
               <p class="ParrafoCardServicios">
@@ -150,7 +152,8 @@
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="services">
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioEndocrinología.jpg" class="card-img-top" alt="General and preventive care" />
+            <img src="img/imgServicios/imgServicioEndocrinología.jpg" class="card-img-top"
+              alt="General and preventive care" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Endocrinología</h5>
               <p class="ParrafoCardServicios">
@@ -192,7 +195,8 @@
 
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioMedicinaInterna.jpg" class="card-img-top" alt="Additional treatments" />
+            <img src="img/imgServicios/imgServicioMedicinaInterna.jpg" class="card-img-top"
+              alt="Additional treatments" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Medicina Interna</h5>
               <p class="ParrafoCardServicios">
@@ -212,7 +216,8 @@
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="services">
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioNeurocirugía.jpg" class="card-img-top" alt="General and preventive care" />
+            <img src="img/imgServicios/imgServicioNeurocirugía.jpg" class="card-img-top"
+              alt="General and preventive care" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Neurocirugía</h5>
               <p class="ParrafoCardServicios">
@@ -226,7 +231,8 @@
 
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioPsicologíaAdultos.jpg" class="card-img-top" alt="Cosmetic solutions" />
+            <img src="img/imgServicios/imgServicioPsicologíaAdultos.jpg" class="card-img-top"
+              alt="Cosmetic solutions" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Psicología Adultos</h5>
               <p class="ParrafoCardServicios">
@@ -240,7 +246,8 @@
 
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioPsicologíaInfantil.jpg" class="card-img-top" alt="Restorative solutions" />
+            <img src="img/imgServicios/imgServicioPsicologíaInfantil.jpg" class="card-img-top"
+              alt="Restorative solutions" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Psicología Infantil</h5>
               <p class="ParrafoCardServicios">
@@ -254,7 +261,8 @@
 
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioTerapiadeParejas.jpg" class="card-img-top" alt="Additional treatments" />
+            <img src="img/imgServicios/imgServicioTerapiadeParejas.jpg" class="card-img-top"
+              alt="Additional treatments" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Terapia de Parejas</h5>
               <p class="ParrafoCardServicios">
@@ -274,7 +282,8 @@
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="services">
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioTelepsicología.jpg" class="card-img-top" alt="General and preventive care" />
+            <img src="img/imgServicios/imgServicioTelepsicología.jpg" class="card-img-top"
+              alt="General and preventive care" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Telepsicología</h5>
               <p class="ParrafoCardServicios">
@@ -288,7 +297,8 @@
 
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioGastroenterología.jpg" class="card-img-top" alt="Cosmetic solutions" />
+            <img src="img/imgServicios/imgServicioGastroenterología.jpg" class="card-img-top"
+              alt="Cosmetic solutions" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Gastroenterología</h5>
               <p class="ParrafoCardServicios">
@@ -302,7 +312,8 @@
 
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioIdentidadMental.jpg" class="card-img-top" alt="Restorative solutions" />
+            <img src="img/imgServicios/imgServicioIdentidadMental.jpg" class="card-img-top"
+              alt="Restorative solutions" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Identidad Mental</h5>
               <p class="ParrafoCardServicios">
@@ -316,7 +327,8 @@
 
         <div class="col">
           <div class="card service-card h-100">
-            <img src="img/imgServicios/imgServicioConfianzaPositiva.jpg" class="card-img-top" alt="Additional treatments" />
+            <img src="img/imgServicios/imgServicioConfianzaPositiva.jpg" class="card-img-top"
+              alt="Additional treatments" />
             <div class="card-body d-flex flex-column">
               <h5 class="TituloCardServicios">Confianza Positiva</h5>
               <p class="ParrafoCardServicios">
@@ -336,7 +348,9 @@
   <script>
     src = "Scripts.js";
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
