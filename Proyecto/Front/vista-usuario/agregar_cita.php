@@ -1,3 +1,12 @@
+<?php
+session_start();
+include 'C:/xampp/htdocs/Proyecto-Programacion-III/Proyecto/Back/db.php';
+
+if (!isset($_SESSION['usuario_cedula'])) {
+    die("No se ha iniciado sesión.");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 

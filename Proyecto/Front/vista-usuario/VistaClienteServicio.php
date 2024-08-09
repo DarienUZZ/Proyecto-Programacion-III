@@ -2,7 +2,9 @@
 session_start();
 include 'C:/xampp/htdocs/Proyecto-Programacion-III/Proyecto/Back/db.php';
 
-$cedula = $_SESSION['usuario_cedula']; // Si no se usa en esta consulta, puedes omitirla.
+if (!isset($_SESSION['usuario_cedula'])) {
+    die("No se ha iniciado sesión.");
+}
 
 $sql = "SELECT codigo, nombre, especialidad, enfermera_a_cargo, costo FROM servicios";
 $result = $conn->query($sql);

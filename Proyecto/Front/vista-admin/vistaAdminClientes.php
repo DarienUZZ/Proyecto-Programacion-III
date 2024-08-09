@@ -6,24 +6,15 @@ if (!isset($_SESSION['usuario_cedula'])) {
     die("No se ha iniciado sesión.");
 }
 
-$sql = "SELECT COUNT(*) as total FROM usuarios
-WHERE usuarios.rol = 'cliente'";
+$sql = "SELECT cedula, usuario, nombre, apellido1, apellido2, email, telefono FROM usuarios WHERE rol = 'cliente'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
-$row = $result->fetch_assoc();
-$ConteoTotalUsuarios = $row['total'];
 
-$sql = "SELECT codigo, nombre, especialidad, enfermera_a_cargo, costo FROM servicios";
-$result = $conn->query($sql);
-
-$servicios = [];
+$usuarios = [];
 while ($row = $result->fetch_assoc()) {
-    $servicios[] = $row;
+    $usuarios[] = $row;
 }
-
-$stmt->close();
-$conn->close();
 ?>
 
 
@@ -47,38 +38,6 @@ $conn->close();
 
     <div class="container my-5">
         <main class="row">
-            <div class="col-12 mb-4">
-                <div class="d-flex justify-content-between align-items-center border-bottom">
-                    <h1 class="h2">Dashboard</h1>
-                </div>
-            </div>
-
-            <div class="row mb-4">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Total Clientes</h5>
-                            <p class="card-text"><?php echo htmlspecialchars($ConteoTotalUsuarios); ?></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Administrar Clientes</h5>
-                            <a href="../vista-admin/vistaAdminClientes.php" class="btn btn-primary">Leer Más</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Administrar Servicios</h5>
-                            <a href="../vista-admin/vistaServicios.php" class="btn btn-primary">Leer Más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="card mb-4">
                 <div class="card-body">
@@ -86,21 +45,38 @@ $conn->close();
                     <table id="serviciosTable" class="table table-striped" style="width: 100%">
                         <thead>
                             <tr>
-                                <th>Código</th>
+                                <th>Cédula</th>
+                                <th>Usuario</th>
                                 <th>Nombre</th>
-                                <th>Especialidad</th>
-                                <th>Enfermera a Cargo</th>
-                                <th>Costo</th>
+                                <th>Primer Apellido</th>
+                                <th>Segundo Apellido</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($servicios as $servicio): ?>
+                            <?php foreach ($usuarios as $usuario): ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($servicio['codigo']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['nombre']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['especialidad']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['enfermera_a_cargo']); ?></td>
-                                    <td><?php echo htmlspecialchars(number_format($servicio['costo'], 2)); ?></td>
+                                    <td><?php echo htmlspecialchars($usuario['cedula']); ?></td>
+                                    <td><?php echo htmlspecialchars($usuario['usuario']); ?></td>
+                                    <td><?php echo htmlspecialchars($usuario['nombre']); ?></td>
+                                    <td><?php echo htmlspecialchars($usuario['apellido1']); ?></td>
+                                    <td><?php echo htmlspecialchars($usuario['apellido2']); ?></td>
+                                    <td><?php echo htmlspecialchars($usuario['email']); ?></td>
+                                    <td><?php echo htmlspecialchars($usuario['telefono']); ?></td>
+                                    <td>
+                                        <a href="verPerfil.php?cedula=<?php echo $usuario['cedula']; ?>"
+                                            class="btn btn-info btn-sm">Ver Perfil</a>
+                                        <a href="editarUsuario.php?cedula=<?php echo $usuario['cedula']; ?>"
+                                            class="btn btn-warning btn-sm">Editar</a>
+                                        <form action="/Proyecto-Programacion-III/Proyecto/Back/eliminar-usuario.php"
+                                            method="POST" style="display:inline-block;">
+                                            <input type="hidden" name="cedula" value="<?php echo $usuario['cedula']; ?>">
+                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">Eliminar</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -121,6 +97,7 @@ $conn->close();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
     <script>
         $(document).ready(function () {
             $('#serviciosTable').DataTable({

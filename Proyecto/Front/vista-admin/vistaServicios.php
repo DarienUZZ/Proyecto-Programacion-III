@@ -5,14 +5,16 @@ include 'C:/xampp/htdocs/Proyecto-Programacion-III/Proyecto/Back/db.php';
 if (!isset($_SESSION['usuario_cedula'])) {
     die("No se ha iniciado sesión.");
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['codigo'])) {
+    $codigo = $_POST['codigo'];
 
-$sql = "SELECT COUNT(*) as total FROM usuarios
-WHERE usuarios.rol = 'cliente'";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$result = $stmt->get_result();
-$row = $result->fetch_assoc();
-$ConteoTotalUsuarios = $row['total'];
+    // Eliminar servicio
+    $sql = "DELETE FROM servicios WHERE codigo = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $codigo);
+    $stmt->execute();
+    $stmt->close();
+}
 
 $sql = "SELECT codigo, nombre, especialidad, enfermera_a_cargo, costo FROM servicios";
 $result = $conn->query($sql);
@@ -22,14 +24,11 @@ while ($row = $result->fetch_assoc()) {
     $servicios[] = $row;
 }
 
-$stmt->close();
 $conn->close();
 ?>
 
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -49,40 +48,14 @@ $conn->close();
         <main class="row">
             <div class="col-12 mb-4">
                 <div class="d-flex justify-content-between align-items-center border-bottom">
-                    <h1 class="h2">Dashboard</h1>
-                </div>
-            </div>
-
-            <div class="row mb-4">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Total Clientes</h5>
-                            <p class="card-text"><?php echo htmlspecialchars($ConteoTotalUsuarios); ?></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Administrar Clientes</h5>
-                            <a href="../vista-admin/vistaAdminClientes.php" class="btn btn-primary">Leer Más</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Administrar Servicios</h5>
-                            <a href="../vista-admin/vistaServicios.php" class="btn btn-primary">Leer Más</a>
-                        </div>
-                    </div>
+                    <h1 class="h2">Servicios Disponibles</h1>
+                    <a href="vistaCrearServicio.php" class="btn btn-primary">Agregar Nuevo Servicio</a>
                 </div>
             </div>
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Lista Servicios</h5>
+                    <h5 class="card-title">Lista de Servicios</h5>
                     <table id="serviciosTable" class="table table-striped" style="width: 100%">
                         <thead>
                             <tr>
@@ -91,6 +64,7 @@ $conn->close();
                                 <th>Especialidad</th>
                                 <th>Enfermera a Cargo</th>
                                 <th>Costo</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,6 +75,17 @@ $conn->close();
                                     <td><?php echo htmlspecialchars($servicio['especialidad']); ?></td>
                                     <td><?php echo htmlspecialchars($servicio['enfermera_a_cargo']); ?></td>
                                     <td><?php echo htmlspecialchars(number_format($servicio['costo'], 2)); ?></td>
+                                    <td>
+                                        <a href="vistaEditarServicio.php?codigo=<?php echo urlencode($servicio['codigo']); ?>"
+                                            class="btn btn-warning btn-sm">Editar</a>
+                                        <form method="post" action="" style="display:inline;"
+                                            onsubmit="return confirm('¿Está seguro de que desea eliminar este servicio?');">
+                                            <input type="hidden" name="codigo"
+                                                value="<?php echo htmlspecialchars($servicio['codigo']); ?>">
+                                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                        </form>
+
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

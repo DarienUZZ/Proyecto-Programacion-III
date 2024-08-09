@@ -1,9 +1,12 @@
 <?php
 session_start();
-include 'C:/xampp/htdocs/Proyecto-Programacion-III/Proyecto/Back/db.php'; // Ruta absoluta como prueba
+include 'C:/xampp/htdocs/Proyecto-Programacion-III/Proyecto/Back/db.php';
 
+if (!isset($_SESSION['usuario_cedula'])) {
+    die("No se ha iniciado sesión.");
+}
 
-$cedula = $_SESSION['usuario_cedula'];
+$cedula = $_SESSION['usuario_cedula']; // Asegúrate de que la cédula esté definida
 
 // cancelart
 if (isset($_POST['cancelar'])) {
