@@ -38,7 +38,9 @@ if (isset($_GET['cedula'])) {
     $stmt->close();
 
     // Obtener las citas del usuario
-    $sql_citas = "SELECT citas.id, citas.fecha, DATE_FORMAT(citas.fecha, '%H:%i') AS hora, 
+    $sql_citas = "SELECT citas.id, citas.fecha, 
+                DATE_FORMAT(citas.fecha, '%d/%m/%Y') AS fecha_formateada,
+                DATE_FORMAT(citas.fecha, '%H:%i') AS hora, 
                   servicios.nombre AS especialidad, servicios.enfermera_a_cargo AS doctor, 
                   citas.estado 
                   FROM citas 
@@ -79,75 +81,98 @@ if (isset($_GET['cedula'])) {
 <body>
     <?php include '../modulos/HeaderAdmin.php'; ?>
 
-    <div class="container my-5">
-        <h2>Perfil de Usuario</h2>
-        <table class="table">
-            <tr>
-                <th>Cédula:</th>
-                <td><?php echo htmlspecialchars($usuario['cedula']); ?></td>
-            </tr>
-            <tr>
-                <th>Usuario:</th>
-                <td><?php echo htmlspecialchars($usuario['usuario']); ?></td>
-            </tr>
-            <tr>
-                <th>Nombre:</th>
-                <td><?php echo htmlspecialchars($usuario['nombre']); ?></td>
-            </tr>
-            <tr>
-                <th>Primer Apellido:</th>
-                <td><?php echo htmlspecialchars($usuario['apellido1']); ?></td>
-            </tr>
-            <tr>
-                <th>Segundo Apellido:</th>
-                <td><?php echo htmlspecialchars($usuario['apellido2']); ?></td>
-            </tr>
-            <tr>
-                <th>Email:</th>
-                <td><?php echo htmlspecialchars($usuario['email']); ?></td>
-            </tr>
-            <tr>
-                <th>Teléfono:</th>
-                <td><?php echo htmlspecialchars($usuario['telefono']); ?></td>
-            </tr>
-        </table>
+    <div class="contendorPerfil container">
+        <div class="profile-card p-4">
+            <div class="profile-header text-center mb-4">
+                <i class="fas fa-user-circle fa-5x"></i>
+                <h2 class="mt-2 profile-name">
+                    <?php echo htmlspecialchars($usuario['nombre'] . ' ' . $usuario['apellido1'] . ' ' . $usuario['apellido2']); ?>
+                </h2>
+                <p class="profile-email">
+                    <?php echo htmlspecialchars($usuario['email']); ?><br>
+                    Cédula: <?php echo htmlspecialchars($usuario['cedula']); ?>
+                </p>
+            </div>
 
-        <h3>Citas del Usuario</h3>
-        <table id="citasTable" class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Especialidad</th>
-                    <th>Doctor</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($citas as $cita): ?>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="etiquetasPerfil form-label">Usuario</label>
+                    <input type="text" class="form-control profile-input"
+                        value="<?php echo htmlspecialchars($usuario['usuario']); ?>" readonly>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="etiquetasPerfil form-label">Nombre</label>
+                    <input type="text" class="form-control profile-input"
+                        value="<?php echo htmlspecialchars($usuario['nombre']); ?>" readonly>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="etiquetasPerfil form-label">Primer Apellido</label>
+                    <input type="text" class="form-control profile-input"
+                        value="<?php echo htmlspecialchars($usuario['apellido1']); ?>" readonly>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="etiquetasPerfil form-label">Segundo Apellido</label>
+                    <input type="text" class="form-control profile-input"
+                        value="<?php echo htmlspecialchars($usuario['apellido2'] ?? ''); ?>" readonly>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="etiquetasPerfil form-label">Email</label>
+                    <input type="email" class="form-control profile-input"
+                        value="<?php echo htmlspecialchars($usuario['email']); ?>" readonly>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="etiquetasPerfil form-label">Teléfono</label>
+                    <input type="tel" class="form-control profile-input"
+                        value="<?php echo htmlspecialchars($usuario['telefono'] ?? ''); ?>" readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 mb-4 mt-4">
+            <div class="d-flex justify-content-between align-items-center border-bottom">
+                <h2 class="tituloDashboard">Listado de Citas</h2>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="citasTable" class="table table-striped">
+                <thead>
                     <tr>
-                        <td><?php echo htmlspecialchars($cita['fecha']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['hora']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['especialidad']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['doctor']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['estado']); ?></td>
-                        <td>
-                            <?php if ($cita['estado'] == 'pendiente'): ?>
-                                <form method="post" action="<?php echo $_SERVER['PHP_SELF'] . '?cedula=' . $_GET['cedula']; ?>"
-                                    onsubmit="return confirm('¿Está seguro de que desea realizar esta acción?');">
-                                    <input type="hidden" name="id_cita" value="<?php echo htmlspecialchars($cita['id']); ?>">
-                                    <button type="submit" name="accion" value="atendida"
-                                        class="btn btn-success btn-sm">Atendida</button>
-                                    <button type="submit" name="accion" value="cancelada"
-                                        class="btn btn-danger btn-sm">Cancelar</button>
-                                </form>
-                            <?php endif; ?>
-                        </td>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Especialidad</th>
+                        <th>Doctor</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($citas as $cita): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($cita['fecha_formateada']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['hora']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['especialidad']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['doctor']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['estado']); ?></td>
+                            <td>
+                                <?php if ($cita['estado'] == 'pendiente'): ?>
+                                    <form method="post"
+                                        action="<?php echo $_SERVER['PHP_SELF'] . '?cedula=' . $_GET['cedula']; ?>"
+                                        onsubmit="return confirm('¿Está seguro de que desea realizar esta acción?');">
+                                        <input type="hidden" name="id_cita"
+                                            value="<?php echo htmlspecialchars($cita['id']); ?>">
+                                        <button type="submit" name="accion" value="atendida"
+                                            class="btn btn-success btn-sm">Atendida</button>
+                                        <button type="submit" name="accion" value="cancelada"
+                                            class="btn btn-danger btn-sm">Cancelar</button>
+                                    </form>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
 
         <a href="vistaAdminClientes.php" class="btn btn-secondary">Volver</a>
     </div>
@@ -162,13 +187,14 @@ if (isset($_GET['cedula'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-
     <script>
         $(document).ready(function () {
             $('#citasTable').DataTable({
-                dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es_es.json"
+                },
+                "paging": true,
+                "searching": true
             });
         });
     </script>

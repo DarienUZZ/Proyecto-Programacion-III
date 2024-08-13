@@ -19,23 +19,20 @@ if (!$user) {
     die("Usuario no encontrado");
 }
 
+$success = false;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'];
-    $nombre = $_POST['nombre'];
-    $apellido1 = $_POST['apellido1'];
-    $apellido2 = $_POST['apellido2'];
     $email = $_POST['email'];
     $telefono = $_POST['telefono'];
 
-    $update_sql = "UPDATE usuarios SET usuario = ?, nombre = ?, apellido1 = ?, apellido2 = ?, email = ?, telefono = ? WHERE cedula = ?";
+    $update_sql = "UPDATE usuarios SET usuario = ?, email = ?, telefono = ? WHERE cedula = ?";
     $stmt = $conn->prepare($update_sql);
-    $stmt->bind_param("sssssss", $usuario, $nombre, $apellido1, $apellido2, $email, $telefono, $cedula);
+    $stmt->bind_param("ssss", $usuario, $email, $telefono, $cedula);
+
 
     if ($stmt->execute()) {
-        header("Location: VistaPerfilUsuario.php");
-        exit();
-    } else {
-        echo "Error al actualizar el perfil.";
+        $success = true;
     }
 }
 ?>
@@ -48,53 +45,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../Style.css">
 </head>
 
 <body>
 
     <?php include '../modulos/HeaderUsuario.php' ?>
-
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h2 class="text-center mb-4">Editar Perfil</h2>
-                <form method="POST">
-                    <div class="mb-3">
-                        <label class="form-label">Usuario</label>
-                        <input type="text" class="form-control" name="usuario"
-                            value="<?php echo htmlspecialchars($user['usuario']); ?>" required>
+                <div class="edit-profile-card">
+                    <div class="edit-profile-header">
+                        <h2 class="text-center">Editar Perfil</h2>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre"
-                            value="<?php echo htmlspecialchars($user['nombre']); ?>" required>
+                    <div class="edit-profile-body">
+                        <form method="POST">
+                            <div class="mb-3">
+                                <label class="form-label edit-profile-label">Usuario</label>
+                                <input type="text" class="form-control edit-profile-input" name="usuario"
+                                    value="<?php echo htmlspecialchars($user['usuario']); ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label edit-profile-label">Email</label>
+                                <input type="email" class="form-control edit-profile-input" name="email"
+                                    value="<?php echo htmlspecialchars($user['email']); ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label edit-profile-label">Teléfono</label>
+                                <input type="tel" class="form-control edit-profile-input" name="telefono"
+                                    value="<?php echo htmlspecialchars($user['telefono'] ?? ''); ?>">
+                            </div>
+                            <div class="d-flex justify-content-start">
+                                <button type="submit" class="btn edit-profile-submit-btn">Guardar Cambios</button>
+                                <button type="reset" class="btn edit-profile-reset-btn">Cancelar</button>
+                                <a href="VistaPerfilUsuario.php" class="btnRegresar">Volver</a>
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Primer Apellido</label>
-                        <input type="text" class="form-control" name="apellido1"
-                            value="<?php echo htmlspecialchars($user['apellido1']); ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Segundo Apellido</label>
-                        <input type="text" class="form-control" name="apellido2"
-                            value="<?php echo htmlspecialchars($user['apellido2'] ?? ''); ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email"
-                            value="<?php echo htmlspecialchars($user['email']); ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Teléfono</label>
-                        <input type="tel" class="form-control" name="telefono"
-                            value="<?php echo htmlspecialchars($user['telefono'] ?? ''); ?>">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            <?php if ($success): ?>
+                Swal.fire({
+                    title: '¡Éxito!',
+                    text: 'Cambios guardados correctamente.',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'VistaPerfilUsuario.php'; // Redirige a la vista de perfil
+                    }
+                });
+            <?php endif; ?>
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>

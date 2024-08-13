@@ -63,64 +63,77 @@ $conn->close();
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
+
 </head>
 
 <body>
     <?php include '../modulos/HeaderUsuario.php' ?>
     <div class="container my-5">
-        <table id="example" class="table table-striped" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Especialidad</th>
-                    <th>Doctor</th>
-                    <th>Estado</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($citas as $cita): ?>
+        <h2 class="mb-4 tituloAgregarCitas">Mis Citas</h2>
+        <div class="table-responsive">
+            <table id="example" class="table table-striped" style="width: 100%">
+                <thead>
                     <tr>
-                        <td><?php echo htmlspecialchars($cita['fecha_formateada']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['hora']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['especialidad']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['doctor']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['estado']); ?></td>
-                        <td>
-                            <?php if ($cita['estado'] === 'pendiente'): ?>
-                                <form method="POST" onsubmit="return confirm('¿Está seguro de que desea cancelar esta cita?');">
-                                    <input type="hidden" name="cita_id" value="<?php echo $cita['id']; ?>">
-                                    <button type="submit" name="cancelar" class="btn btn-danger">Cancelar</button>
-                                </form>
-                            <?php endif; ?>
-                        </td>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Especialidad</th>
+                        <th>Doctor</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($citas as $cita): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($cita['fecha_formateada']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['hora']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['especialidad']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['doctor']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['estado']); ?></td>
+                            <td>
+                                <?php if ($cita['estado'] === 'pendiente'): ?>
+                                    <form onsubmit="cancelarCita(event, <?php echo $cita['id']; ?>)">
+                                        <button type="button" class="btn btn-danger"
+                                            onclick="cancelarCita(event, <?php echo $cita['id']; ?>)">Cancerlar
+                                        </button>
+                                    </form>
 
-        <h2 class="my-5">Tiempo Restante para las Citas</h2>
-        <table id="tiempoRestante" class="table table-striped" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Especialidad</th>
-                    <th>Tiempo Restante</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($citas as $cita): ?>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h2 class="my-5 tituloAgregarCitas">Tiempo Restante para las Citas</h2>
+        <div class="table-responsive">
+            <table id="tiempoRestante" class="table table-striped" style="width: 100%">
+                <thead>
                     <tr>
-                        <td><?php echo htmlspecialchars($cita['fecha_formateada']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['hora']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['especialidad']); ?></td>
-                        <td><?php echo htmlspecialchars($cita['tiempo_restante']); ?></td>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Especialidad</th>
+                        <th>Tiempo Restante</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($citas as $cita): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($cita['fecha_formateada']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['hora']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['especialidad']); ?></td>
+                            <td><?php echo htmlspecialchars($cita['tiempo_restante']); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -133,18 +146,68 @@ $conn->close();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function () {
             $('#example').DataTable({
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [
+                    { extend: 'copy', className: 'btn btn-copy' },
+                    { extend: 'csv', className: 'btn btn-csv' },
+                    { extend: 'excel', className: 'btn btn-excel' },
+                    { extend: 'pdf', className: 'btn btn-pdf' },
+                    { extend: 'print', className: 'btn btn-print' }
+                ]
             });
 
             $('#tiempoRestante').DataTable({
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [
+                    { extend: 'copy', className: 'btn btn-copy' },
+                    { extend: 'csv', className: 'btn btn-csv' },
+                    { extend: 'excel', className: 'btn btn-excel' },
+                    { extend: 'pdf', className: 'btn btn-pdf' },
+                    { extend: 'print', className: 'btn btn-print' }
+                ]
             });
         });
+
+
+        function cancelarCita(event, citaId) {
+            event.preventDefault(); // Previene el envío del formulario por defecto
+
+            Swal.fire({
+                title: '¿Está seguro?',
+                text: "Esta acción no se puede deshacer.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#003f5c',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, cancelar',
+                cancelButtonText: 'No, mantener'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'cita_id';
+                    input.value = citaId;
+
+                    const button = document.createElement('button');
+                    button.type = 'submit';
+                    button.name = 'cancelar';
+                    button.style.display = 'none';
+
+                    form.appendChild(input);
+                    form.appendChild(button);
+
+                    document.body.appendChild(form);
+                    button.click();
+                }
+            });
+        }
     </script>
 </body>
 

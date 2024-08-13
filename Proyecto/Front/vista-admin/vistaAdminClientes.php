@@ -36,51 +36,65 @@ while ($row = $result->fetch_assoc()) {
 <body>
     <?php include '../modulos/HeaderAdmin.php'; ?>
 
-    <div class="container my-5">
+    <div class="contenedorClientes container">
+        <div class="col-12 mb-4">
+            <div class="d-flex justify-content-between align-items-center border-bottom">
+                <h1 class="tituloDashboard">Listado Clientes</h1>
+            </div>
+        </div>
         <main class="row">
-
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Lista Servicios</h5>
-                    <table id="serviciosTable" class="table table-striped" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th>Cédula</th>
-                                <th>Usuario</th>
-                                <th>Nombre</th>
-                                <th>Primer Apellido</th>
-                                <th>Segundo Apellido</th>
-                                <th>Email</th>
-                                <th>Teléfono</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($usuarios as $usuario): ?>
+                    <div class="table-responsive">
+                        <table id="serviciosTable" class="table table-striped" style="width: 100%">
+                            <thead>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($usuario['cedula']); ?></td>
-                                    <td><?php echo htmlspecialchars($usuario['usuario']); ?></td>
-                                    <td><?php echo htmlspecialchars($usuario['nombre']); ?></td>
-                                    <td><?php echo htmlspecialchars($usuario['apellido1']); ?></td>
-                                    <td><?php echo htmlspecialchars($usuario['apellido2']); ?></td>
-                                    <td><?php echo htmlspecialchars($usuario['email']); ?></td>
-                                    <td><?php echo htmlspecialchars($usuario['telefono']); ?></td>
-                                    <td>
-                                        <a href="verPerfil.php?cedula=<?php echo $usuario['cedula']; ?>"
-                                            class="btn btn-info btn-sm">Ver Perfil</a>
-                                        <a href="editarUsuario.php?cedula=<?php echo $usuario['cedula']; ?>"
-                                            class="btn btn-warning btn-sm">Editar</a>
-                                        <form action="/Proyecto-Programacion-III/Proyecto/Back/eliminar-usuario.php"
-                                            method="POST" style="display:inline-block;">
-                                            <input type="hidden" name="cedula" value="<?php echo $usuario['cedula']; ?>">
-                                            <button type="submit" class="btn btn-danger btn-sm"
-                                                onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">Eliminar</button>
-                                        </form>
-                                    </td>
+                                    <th>Cédula</th>
+                                    <th>Usuario</th>
+                                    <th>Nombre</th>
+                                    <th>Primer Apellido</th>
+                                    <th>Segundo Apellido</th>
+                                    <th>Email</th>
+                                    <th>Teléfono</th>
+                                    <th>Acciones</th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($usuarios as $usuario): ?>
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($usuario['cedula']); ?></td>
+                                        <td><?php echo htmlspecialchars($usuario['usuario']); ?></td>
+                                        <td><?php echo htmlspecialchars($usuario['nombre']); ?></td>
+                                        <td><?php echo htmlspecialchars($usuario['apellido1']); ?></td>
+                                        <td><?php echo htmlspecialchars($usuario['apellido2']); ?></td>
+                                        <td><?php echo htmlspecialchars($usuario['email']); ?></td>
+                                        <td><?php echo htmlspecialchars($usuario['telefono']); ?></td>
+                                        <td class="action-icons">
+                                            <a href="verPerfil.php?cedula=<?php echo $usuario['cedula']; ?>"
+                                                title="Ver Perfil" class="view-icon">
+                                                <i class="fas fa-user"></i>
+                                            </a>
+                                            <a href="editarUsuario.php?cedula=<?php echo $usuario['cedula']; ?>"
+                                                title="Editar" class="edit-icon">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <form action="/Proyecto-Programacion-III/Proyecto/Back/eliminar-usuario.php"
+                                                method="POST" style="display:inline-block;">
+                                                <input type="hidden" name="cedula"
+                                                    value="<?php echo $usuario['cedula']; ?>">
+                                                <button type="submit" class="btn btn-link p-0 delete-icon"
+                                                    onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');"
+                                                    title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </main>
@@ -102,7 +116,13 @@ while ($row = $result->fetch_assoc()) {
         $(document).ready(function () {
             $('#serviciosTable').DataTable({
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [
+                    { extend: 'copy', className: 'btn btn-copy' },
+                    { extend: 'csv', className: 'btn btn-csv' },
+                    { extend: 'excel', className: 'btn btn-excel' },
+                    { extend: 'pdf', className: 'btn btn-pdf' },
+                    { extend: 'print', className: 'btn btn-print' }
+                ]
             });
         });
     </script>

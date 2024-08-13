@@ -38,61 +38,56 @@ if (!$user) {
 
     <?php include '../modulos/HeaderUsuario.php' ?>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="profile-container p-4">
+                <div class="profile-card p-4">
 
-
-                    <div class="text-center mb-4">
+                    <div class="profile-header text-center mb-4">
                         <i class="fas fa-user-circle fa-5x"></i>
-
-                        <h2 class="mt-2">
+                        <h2 class="mt-2 profile-name">
                             <?php echo htmlspecialchars($user['nombre'] . ' ' . $user['apellido1'] . ' ' . $user['apellido2']); ?>
                         </h2>
-                        <p><?php echo htmlspecialchars($user['email']); ?><br>
-                            Cédula: <?php echo htmlspecialchars($user['cedula']); ?></p>
+                        <p class="profile-email">
+                            <?php echo htmlspecialchars($user['email']); ?><br>
+                            Cédula: <?php echo htmlspecialchars($user['cedula']); ?>
+                        </p>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Usuario</label>
-                            <input type="text" class="form-control"
+                            <label class="etiquetasPerfil form-label">Usuario</label>
+                            <input type="text" class="form-control profile-input"
                                 value="<?php echo htmlspecialchars($user['usuario']); ?>" readonly>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control"
+                            <label class="etiquetasPerfil form-label">Nombre</label>
+                            <input type="text" class="form-control profile-input"
                                 value="<?php echo htmlspecialchars($user['nombre']); ?>" readonly>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Primer Apellido</label>
-                            <input type="text" class="form-control"
+                            <label class="etiquetasPerfil form-label">Primer Apellido</label>
+                            <input type="text" class="form-control profile-input"
                                 value="<?php echo htmlspecialchars($user['apellido1']); ?>" readonly>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Segundo Apellido</label>
-                            <input type="text" class="form-control"
+                            <label class="etiquetasPerfil form-label">Segundo Apellido</label>
+                            <input type="text" class="form-control profile-input"
                                 value="<?php echo htmlspecialchars($user['apellido2'] ?? ''); ?>" readonly>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control"
+                            <label class="etiquetasPerfil form-label">Email</label>
+                            <input type="email" class="form-control profile-input"
                                 value="<?php echo htmlspecialchars($user['email']); ?>" readonly>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control"
+                            <label class="etiquetasPerfil form-label">Teléfono</label>
+                            <input type="tel" class="form-control profile-input"
                                 value="<?php echo htmlspecialchars($user['telefono'] ?? ''); ?>" readonly>
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Rol</label>
-                            <input type="text" class="form-control"
-                                value="<?php echo htmlspecialchars($user['rol']); ?>" readonly>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between mb-3">
-                        <a href="editar-perfil.php" class="btn btn-primary">Editar Perfil</a>
+                        <a href="editar-perfil.php" class="btn btn-primary edit-profile-btn">Editar Perfil</a>
                     </div>
                 </div>
             </div>
@@ -101,21 +96,6 @@ if (!$user) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navbarToggler = document.querySelector('.navbar-toggler');
-            var navbarCollapse = document.querySelector('.navbar-collapse');
-
-            navbarToggler.addEventListener('click', function (e) {
-                e.preventDefault();
-                if (navbarCollapse.style.display === 'block') {
-                    navbarCollapse.style.display = 'none';
-                } else {
-                    navbarCollapse.style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

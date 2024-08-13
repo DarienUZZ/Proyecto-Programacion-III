@@ -60,16 +60,7 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../img/imgCarusel3.png" class="d-block w-100" alt="Dental Clinic 1" />
-                <div class="carousel-caption">
-                    <div class="caption-content">
-                        <h2>Dr. JAVIER SEGURA R</h2>
-                        <p>Médico Cirujano, Especialista en Pediatría y Especialista en Medicina Extracorpórea
-                            Pediátrica,</p>
-                        <button class="btnCaruselSlider1" onclick="location.href='agregar_cita.php'">Agenda Tu
-                            Cita</button>
-                    </div>
-                </div>
+                <img src="../img/imgCarusel4.webp" class="d-block w-100" alt="Dental Clinic 1" />
             </div>
             <div class="carousel-item">
                 <img src="../img/imgCarusel2.webp" class="d-block w-100" alt="Dental Clinic 2" />

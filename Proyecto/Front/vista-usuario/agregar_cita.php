@@ -6,6 +6,8 @@ if (!isset($_SESSION['usuario_cedula'])) {
     die("No se ha iniciado sesión.");
 }
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,8 +24,8 @@ if (!isset($_SESSION['usuario_cedula'])) {
 <body>
     <?php include '../modulos/HeaderUsuario.php' ?>
 
-    <div class="container mt-5">
-        <h2>Agregar Cita</h2>
+    <div class="ContenidoFormulario container mt-5">
+        <h2 class="tituloAgregarCitas">Agregar Cita</h2>
         <form action="/Proyecto-Programacion-III/Proyecto/Back/agregar_cita.php" method="POST">
             <div class="form-group mb-3">
                 <label for="servicio">Servicio:</label>
@@ -49,10 +51,14 @@ if (!isset($_SESSION['usuario_cedula'])) {
                 </select>
             </div>
             <div class="form-group mb-3">
-                <label for="fechaHora">Fecha y Hora:</label>
-                <input type="datetime-local" name="fechaHora" id="fechaHora" class="form-control" required>
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Programar Cita</button>
+            <div class="form-group mb-3">
+                <label for="hora">Hora:</label>
+                <input type="time" name="hora" id="hora" class="form-control" required>
+            </div>
+            <button type="submit" class="btnProgramarCita">Programar Cita</button>
         </form>
     </div>
 

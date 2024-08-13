@@ -82,7 +82,9 @@
                                 timer: 3000,
                                 timerProgressBar: true,
                                 showConfirmButton: false
+
                             });
+                            form.reset();
                         } else {
                             Swal.fire({
                                 icon: 'error',

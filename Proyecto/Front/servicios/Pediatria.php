@@ -7,7 +7,7 @@
   <title>Pediatría</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../Style.css" />
+  <link rel="stylesheet" href="Style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
@@ -16,8 +16,8 @@
 
   <div class="container mt-5">
     <section>
-      <h2 class="text-center">¿Qué es la Pediatría?</h2>
-      <p>
+      <h2 class="TituloServiciosE">¿Qué es la Pediatría?</h2>
+      <p class="ParrafoServiciosE">
         A la Pediatría le incumbe todo cuanto se refiere a los cuidados del niño y adolescente sano (Pediatría
         Preventiva), a los modos de asistencia médica integral, total y continuada en el niño y el adolescente en
         estado
@@ -32,9 +32,9 @@
       </div>
     </section>
 
-    <section class="mt-5">
-      <h2 class="text-center">¿Cuándo debo ir?</h2>
-      <p>
+    <section class="mt-5 mb-5">
+      <h2 class="TituloServiciosE">¿Cuándo debo ir?</h2>
+      <p class="ParrafoServiciosE">
         Los niños y las niñas tienen controles de salud con mayor frecuencia cuando son más jóvenes que cuando son
         adolescentes. Esto se debe a que el desarrollo es más rápido durante estos años. Cada control con el pediatra
         incluye un examen físico completo, donde se verifica el crecimiento y desarrollo del bebé o del niño o niña y
@@ -44,7 +44,7 @@
         está
         saludable, los controles con el pediatra son un buen momento para enfocarse en su bienestar integral.
       </p>
-      <p>
+      <p class="ParrafoServiciosE">
         A veces para los padres es difícil saber si su hijo está enfermo o no. Muchas veces, no es necesario acudir de
         urgencia a la clínica o el hospital, y la consulta de pediatría le permite la valoración por enfermedades
         comunes de la infancia, que se pueden presentar como tos y secreción nasal, congestión, dolor de garganta,
@@ -54,7 +54,7 @@
         diagnóstico
         y tratamiento adecuado en el manejo de la enfermedad detectada.
       </p>
-      <p>
+      <p class="ParrafoServiciosE">
         De igual manera, estas visitas al pediatra (de seguimiento, rutinario o por enfermedad), se deben aprovechar
         para consultarle al pediatra sobre las preocupaciones o problemas notados en el desarrollo, comportamiento o
         aprendizaje de sus hijos o hijas, ya que se pueden detectar de manera temprana algunas condiciones médicas

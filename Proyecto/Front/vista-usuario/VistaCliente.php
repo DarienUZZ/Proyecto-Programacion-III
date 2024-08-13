@@ -71,21 +71,7 @@ if (!isset($_SESSION['usuario_cedula'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navbarToggler = document.querySelector('.navbar-toggler');
-            var navbarCollapse = document.querySelector('.navbar-collapse');
 
-            navbarToggler.addEventListener('click', function (e) {
-                e.preventDefault();
-                if (navbarCollapse.style.display === 'block') {
-                    navbarCollapse.style.display = 'none';
-                } else {
-                    navbarCollapse.style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

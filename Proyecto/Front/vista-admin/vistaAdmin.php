@@ -45,66 +45,72 @@ $conn->close();
 <body>
     <?php include '../modulos/HeaderAdmin.php'; ?>
 
-    <div class="container my-5">
+    <div class="contenedorVistaAdmin container">
         <main class="row">
             <div class="col-12 mb-4">
                 <div class="d-flex justify-content-between align-items-center border-bottom">
-                    <h1 class="h2">Dashboard</h1>
+                    <h1 class="tituloDashboard">Dashboard</h1>
                 </div>
             </div>
 
             <div class="row mb-4">
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card cardVistaAdmin">
                         <div class="card-body">
-                            <h5 class="card-title">Total Clientes</h5>
-                            <p class="card-text"><?php echo htmlspecialchars($ConteoTotalUsuarios); ?></p>
+                            <h5 class="card-title cardTituloVistaAdmin">Total Clientes</h5>
+                            <p class="card-text cardTextoVistaAdmin">
+                                <?php echo htmlspecialchars($ConteoTotalUsuarios); ?>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card cardVistaAdmin">
                         <div class="card-body">
-                            <h5 class="card-title">Administrar Clientes</h5>
-                            <a href="../vista-admin/vistaAdminClientes.php" class="btn btn-primary">Leer Más</a>
+                            <h5 class="card-title cardTituloVistaAdmin">Administrar Clientes</h5>
+                            <a href="../vista-admin/vistaAdminClientes.php" class="btn btnVistaAdmin">Leer Más</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card cardVistaAdmin">
                         <div class="card-body">
-                            <h5 class="card-title">Administrar Servicios</h5>
-                            <a href="../vista-admin/vistaServicios.php" class="btn btn-primary">Leer Más</a>
+                            <h5 class="card-title cardTituloVistaAdmin">Administrar Servicios</h5>
+                            <a href="../vista-admin/vistaServicios.php" class="btn btnVistaAdmin">Leer Más</a>
                         </div>
                     </div>
                 </div>
             </div>
 
+
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title">Lista Servicios</h5>
-                    <table id="serviciosTable" class="table table-striped" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th>Código</th>
-                                <th>Nombre</th>
-                                <th>Especialidad</th>
-                                <th>Enfermera a Cargo</th>
-                                <th>Costo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($servicios as $servicio): ?>
+                    <div class="table-responsive">
+                        <table id="serviciosTable" class="table table-striped" style="width: 100%">
+                            <thead>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($servicio['codigo']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['nombre']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['especialidad']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['enfermera_a_cargo']); ?></td>
-                                    <td><?php echo htmlspecialchars(number_format($servicio['costo'], 2)); ?></td>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Especialidad</th>
+                                    <th>Enfermera a Cargo</th>
+                                    <th>Costo</th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($servicios as $servicio): ?>
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($servicio['codigo']); ?></td>
+                                        <td><?php echo htmlspecialchars($servicio['nombre']); ?></td>
+                                        <td><?php echo htmlspecialchars($servicio['especialidad']); ?></td>
+                                        <td><?php echo htmlspecialchars($servicio['enfermera_a_cargo']); ?></td>
+                                        <td><?php echo htmlspecialchars(number_format($servicio['costo'], 2)); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </main>
@@ -125,7 +131,13 @@ $conn->close();
         $(document).ready(function () {
             $('#serviciosTable').DataTable({
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [
+                    { extend: 'copy', className: 'btn btn-copy' },
+                    { extend: 'csv', className: 'btn btn-csv' },
+                    { extend: 'excel', className: 'btn btn-excel' },
+                    { extend: 'pdf', className: 'btn btn-pdf' },
+                    { extend: 'print', className: 'btn btn-print' }
+                ]
             });
         });
     </script>

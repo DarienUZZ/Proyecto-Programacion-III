@@ -1,0 +1,2 @@
+# Redirigir errores 404 a una página personalizada
+ErrorDocument 404 /Proyecto-Programacion-III/Proyecto/Front/vista-admin/404A.php

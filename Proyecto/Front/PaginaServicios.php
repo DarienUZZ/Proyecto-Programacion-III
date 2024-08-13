@@ -45,7 +45,7 @@
                 Ofrecemos tratamientos especializados para la salud mental,
                 adaptados a las necesidades individuales de cada paciente.
               </p>
-              <a href="../Psiquiatria.php" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Psiquiatria.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
                 musculoesquelético, incluyendo tratamientos innovadores y
                 rehabilitación.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Ortopedia.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
                 Realizamos diagnósticos y tratamientos de las enfermedades del
                 aparato urinario y del sistema reproductor masculino.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Urologia.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@
                 Proveemos atención completa para la salud femenina, desde
                 chequeos rutinarios hasta tratamientos especializados.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Ginecologia.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@
                 Tratamos enfermedades reumáticas con enfoques personalizados y
                 tecnología avanzada para mejorar la calidad de vida.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Reumatologia.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@
                 Ofrecemos servicios médicos generales para el diagnóstico,
                 tratamiento y prevención de diversas enfermedades.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/MedicinaGeneral.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@
                 Nos enfocamos en la salud integral de los adultos mayores,
                 promoviendo su bienestar y calidad de vida.s
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Geriatria.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@
                 Diagnósticos y tratamientos especializados para trastornos
                 hormonales y metabólicos, adaptados a cada paciente.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Endocrinologia.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -174,7 +174,7 @@
                 Realizamos procedimientos quirúrgicos con alta precisión y
                 cuidados postoperatorios personalizados.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/CirugiaGeneral.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -188,7 +188,7 @@
                 Rehabilitamos y tratamos disfunciones físicas mediante
                 terapias y ejercicios específicos para cada condición.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Fisiatria.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -203,7 +203,7 @@
                 Proveemos atención médica especializada para enfermedades
                 complejas y crónicas en adultos.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/MedicinaInterna.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -224,7 +224,7 @@
                 Realizamos intervenciones quirúrgicas precisas para tratar
                 trastornos del sistema nervioso central y periférico.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Neurocirugia.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -239,7 +239,7 @@
                 Brindamos apoyo psicológico y terapias personalizadas para
                 mejorar la salud mental de los adultos.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/PsicologiaAdultos.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -254,7 +254,7 @@
                 Apoyamos el desarrollo emocional y psicológico de los niños
                 mediante terapias adaptadas a sus necesidades.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/PsicologiaInfantil.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -269,7 +269,7 @@
                 Ofrecemos asesoramiento y terapias para mejorar la
                 comunicación y resolver conflictos en la relación de pareja.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/TerapiaParejas.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -290,7 +290,7 @@
                 Proveemos servicios de psicología a distancia para que puedas
                 acceder a apoyo profesional desde cualquier lugar.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Telepsicologia.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -305,7 +305,7 @@
                 Diagnóstico y tratamiento de enfermedades del sistema
                 digestivo con enfoques modernos y efectivos.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Gastroenterologia.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -320,7 +320,7 @@
                 Apoyamos la exploración y afirmación de la identidad personal
                 mediante terapias psicológicas especializadas.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/Identidadmental.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>
@@ -335,7 +335,7 @@
                 Fomentamos el bienestar emocional y la autoestima a través de
                 programas terapéuticos personalizados.
               </p>
-              <a href="#" class="btn btn-primary mt-auto">Leer Más</a>
+              <a href="servicios/confianzapositiva.php" class="btn btn-primary mt-auto">Leer Más</a>
             </div>
           </div>
         </div>

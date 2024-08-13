@@ -7,7 +7,7 @@
     <title>Servicios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../Style.css" />
+    <link rel="stylesheet" href="Style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
@@ -22,27 +22,21 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../vista-usuario/VistaCliente.php">Inicio</a>
+                            <a class="nav-link" href="../Index.php">Inicio</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="../vista-usuario/historial-citas.php">Historial Citas</a>
+                            <a class="nav-link" href="../Acerca-Nosotros.php">Acerca de Nosotros</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="../vista-usuario/agregar_cita.php">Agendar Cita</a>
+                            <a class="nav-link" href="../PaginaServicios.php">Servicios</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="../vista-usuario/VistaClienteServicio.php">Servicios</a>
+                            <a class="nav-link" href="../Contacto.php">Contacto</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item mx-3">
-                            <a class="nav-link" href="VistaPerfilUsuario.php">
-                                <i class="fas fa-user-circle fa-1x"></i>
-                            </a>
-                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Proyecto-Programacion-III/Proyecto/Back/cerrar-sesion.php">Cerrar
-                                Sesion</a>
+                            <a class="nav-link" href="../Login.php">Inicio sesión/Registro</a>
                         </li>
                     </ul>
                 </div>
@@ -66,7 +60,7 @@
                         <h2>Dr. JAVIER SEGURA R</h2>
                         <p>Médico Cirujano, Especialista en Pediatría y Especialista en Medicina Extracorpórea
                             Pediátrica,</p>
-                        <button class="btnCaruselSlider1" onclick="location.href='agregar_cita.php'">Agenda Tu
+                        <button class="btnCaruselSlider1" onclick="location.href='../Login.php'">Agenda Tu
                             Cita</button>
                     </div>
                 </div>
@@ -82,21 +76,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navbarToggler = document.querySelector('.navbar-toggler');
-            var navbarCollapse = document.querySelector('.navbar-collapse');
-
-            navbarToggler.addEventListener('click', function (e) {
-                e.preventDefault();
-                if (navbarCollapse.style.display === 'block') {
-                    navbarCollapse.style.display = 'none';
-                } else {
-                    navbarCollapse.style.display = 'block';
-                }
-            });
-        });
-    </script>
     <script src="Scripts.js"></script>
 </body>
 

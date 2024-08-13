@@ -23,8 +23,9 @@
             </div>
             <form id="registrationForm">
                 <div class="form-group">
-                    <input type="text" class="form-control InputRegistroUsuario" id="cedula" name="cedula"
-                        placeholder="Cédula" required>
+                    <input type="tel" class="form-control InputRegistroUsuario" id="cedula" name="cedula"
+                        placeholder="Cédula" required maxlength="9" minlength="9" pattern="\d{9}"
+                        title="Debe contener exactamente 9 dígitos">
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control InputRegistroUsuario" id="usuario" name="usuario"
@@ -48,12 +49,16 @@
                 </div>
                 <div class="form-group">
                     <input type="tel" class="form-control InputRegistroUsuario" id="telefono" name="telefono"
-                        placeholder="Teléfono" required>
+                        placeholder="Teléfono" required maxlength="8" minlength="8" pattern="\d{8}"
+                        title="Debe contener exactamente 8 dígitos">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control InputRegistroUsuario" id="contraseña" name="contraseña"
                         placeholder="Contraseña" required>
+                    <input type="password" class="form-control InputRegistroUsuario" id="confirmarContraseña"
+                        name="confirmarContraseña" placeholder="Confirmar Contraseña" required>
                 </div>
+
 
                 <button type="submit" class="btnRegistroUsuario">Crear Usuario</button>
             </form>
@@ -64,8 +69,32 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script>
+        document.getElementById('cedula').addEventListener('input', function (e) {
+            this.value = this.value.replace(/\D/g, '').slice(0, 9); // Solo números, máximo 9 dígitos
+        });
+
+        document.getElementById('telefono').addEventListener('input', function (e) {
+            this.value = this.value.replace(/\D/g, '').slice(0, 8); // Solo números, máximo 8 dígitos
+        });
+
+
+
         document.getElementById('registrationForm').addEventListener('submit', function (e) {
             e.preventDefault(); // Evitar el envío del formulario por defecto
+
+
+            var contra = document.getElementById('contraseña').value;
+            var Confircontra = document.getElementById('confirmarContraseña').value;
+
+            if (contra !== Confircontra) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Las contraseñas no coinciden.',
+                });
+                return;
+            }
+
 
             var formData = new FormData(this);
 

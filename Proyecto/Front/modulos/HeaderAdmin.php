@@ -42,36 +42,6 @@
         </nav>
     </header>
 
-    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-                aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../img/imgCarusel3.png" class="d-block w-100" alt="Dental Clinic 1" />
-                <div class="carousel-caption">
-                    <div class="caption-content">
-                        <h2>Dr. JAVIER SEGURA R</h2>
-                        <p>Médico Cirujano, Especialista en Pediatría y Especialista en Medicina Extracorpórea
-                            Pediátrica,</p>
-                        <button class="btnCaruselSlider1" onclick="location.href='agregar_cita.php'">Agenda Tu
-                            Cita</button>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../img/imgCarusel2.webp" class="d-block w-100" alt="Dental Clinic 2" />
-            </div>
-            <div class="carousel-item">
-                <img src="../img/imgCarusel1.webp" class="d-block w-100" alt="Dental Clinic 2" />
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <script>

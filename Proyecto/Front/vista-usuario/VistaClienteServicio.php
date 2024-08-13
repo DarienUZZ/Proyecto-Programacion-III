@@ -32,29 +32,32 @@ $conn->close();
 <body>
     <?php include '../modulos/HeaderUsuario.php' ?>
     <div class="container my-5">
-        <h2 class="my-4">Servicios Disponibles</h2>
-        <table id="serviciosTable" class="table table-striped" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Especialidad</th>
-                    <th>Enfermera a Cargo</th>
-                    <th>Costo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($servicios as $servicio): ?>
+        <h2 class="my-4 tituloAgregarCitas">Servicios Disponibles</h2>
+        <div class="table-responsive">
+            <table id="serviciosTable" class="table table-striped" style="width: 100%">
+                <thead>
                     <tr>
-                        <td><?php echo htmlspecialchars($servicio['codigo']); ?></td>
-                        <td><?php echo htmlspecialchars($servicio['nombre']); ?></td>
-                        <td><?php echo htmlspecialchars($servicio['especialidad']); ?></td>
-                        <td><?php echo htmlspecialchars($servicio['enfermera_a_cargo']); ?></td>
-                        <td><?php echo htmlspecialchars(number_format($servicio['costo'], 2)); ?></td>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Especialidad</th>
+                        <th>Enfermera a Cargo</th>
+                        <th>Costo</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($servicios as $servicio): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($servicio['codigo']); ?></td>
+                            <td><?php echo htmlspecialchars($servicio['nombre']); ?></td>
+                            <td><?php echo htmlspecialchars($servicio['especialidad']); ?></td>
+                            <td><?php echo htmlspecialchars($servicio['enfermera_a_cargo']); ?></td>
+                            <td><?php echo htmlspecialchars(number_format($servicio['costo'], 2)); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -71,7 +74,13 @@ $conn->close();
         $(document).ready(function () {
             $('#serviciosTable').DataTable({
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [
+                    { extend: 'copy', className: 'btn btn-copy' },
+                    { extend: 'csv', className: 'btn btn-csv' },
+                    { extend: 'excel', className: 'btn btn-excel' },
+                    { extend: 'pdf', className: 'btn btn-pdf' },
+                    { extend: 'print', className: 'btn btn-print' }
+                ]
             });
         });
     </script>

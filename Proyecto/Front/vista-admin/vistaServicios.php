@@ -44,52 +44,56 @@ $conn->close();
 <body>
     <?php include '../modulos/HeaderAdmin.php'; ?>
 
-    <div class="container my-5">
+    <div class="contenedorVistaPerfil container">
         <main class="row">
             <div class="col-12 mb-4">
-                <div class="d-flex justify-content-between align-items-center border-bottom">
-                    <h1 class="h2">Servicios Disponibles</h1>
-                    <a href="vistaCrearServicio.php" class="btn btn-primary">Agregar Nuevo Servicio</a>
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center border-bottom">
+                    <h1 class="tituloDashboard mb-2 mb-md-0">Listado Servicios</h1>
+                    <a href="vistaCrearServicio.php" class="btnAgregarServicio">Agregar Nuevo
+                        Servicio</a>
                 </div>
             </div>
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Lista de Servicios</h5>
-                    <table id="serviciosTable" class="table table-striped" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th>Código</th>
-                                <th>Nombre</th>
-                                <th>Especialidad</th>
-                                <th>Enfermera a Cargo</th>
-                                <th>Costo</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($servicios as $servicio): ?>
+                    <div class="table-responsive">
+                        <table id="serviciosTable" class="table table-striped" style="width: 100%">
+                            <thead>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($servicio['codigo']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['nombre']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['especialidad']); ?></td>
-                                    <td><?php echo htmlspecialchars($servicio['enfermera_a_cargo']); ?></td>
-                                    <td><?php echo htmlspecialchars(number_format($servicio['costo'], 2)); ?></td>
-                                    <td>
-                                        <a href="vistaEditarServicio.php?codigo=<?php echo urlencode($servicio['codigo']); ?>"
-                                            class="btn btn-warning btn-sm">Editar</a>
-                                        <form method="post" action="" style="display:inline;"
-                                            onsubmit="return confirm('¿Está seguro de que desea eliminar este servicio?');">
-                                            <input type="hidden" name="codigo"
-                                                value="<?php echo htmlspecialchars($servicio['codigo']); ?>">
-                                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                                        </form>
-
-                                    </td>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Especialidad</th>
+                                    <th>Enfermera a Cargo</th>
+                                    <th>Costo</th>
+                                    <th>Acciones</th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($servicios as $servicio): ?>
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($servicio['codigo']); ?></td>
+                                        <td><?php echo htmlspecialchars($servicio['nombre']); ?></td>
+                                        <td><?php echo htmlspecialchars($servicio['especialidad']); ?></td>
+                                        <td><?php echo htmlspecialchars($servicio['enfermera_a_cargo']); ?></td>
+                                        <td><?php echo htmlspecialchars(number_format($servicio['costo'], 2)); ?></td>
+                                        <td>
+                                            <a href="vistaEditarServicio.php?codigo=<?php echo urlencode($servicio['codigo']); ?>"
+                                                class="btn btn-warning btn-sm">Editar</a>
+                                            <form method="post" action="" style="display:inline;"
+                                                onsubmit="return confirm('¿Está seguro de que desea eliminar este servicio?');">
+                                                <input type="hidden" name="codigo"
+                                                    value="<?php echo htmlspecialchars($servicio['codigo']); ?>">
+                                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                            </form>
+
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </main>
@@ -110,7 +114,13 @@ $conn->close();
         $(document).ready(function () {
             $('#serviciosTable').DataTable({
                 dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                buttons: [
+                    { extend: 'copy', className: 'btn btn-copy' },
+                    { extend: 'csv', className: 'btn btn-csv' },
+                    { extend: 'excel', className: 'btn btn-excel' },
+                    { extend: 'pdf', className: 'btn btn-pdf' },
+                    { extend: 'print', className: 'btn btn-print' }
+                ]
             });
         });
     </script>
